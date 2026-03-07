@@ -1,6 +1,6 @@
 {
-  "name": "Free Notepad",
-  "short_name": "Free Notepad",
+  "name": "freenotepad.app",
+  "short_name": "freenotepad.app",
   "description": "A free, private notepad app that runs entirely in your browser. No login required.",
   "start_url": "/",
   "display": "standalone",
