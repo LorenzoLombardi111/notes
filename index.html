@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notebook — Free Offline Note Taking App | No Login Required</title>
-  <meta name="description" content="Free, private notebook app that works entirely in your browser. No login, no cloud, no tracking. Create, organize, and export notes with a beautiful distraction-free writing experience. Works offline.">
+  <meta name="description" content="Free, private notebook app in your browser. No login, no cloud, no tracking. Create, organize, and export notes offline.">
   <meta name="keywords" content="notebook app, free note taking, offline notes, browser notebook, no login notes, private notes, distraction free writing, local notes app, markdown export">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Notebook App">
@@ -21,8 +21,10 @@
   <meta name="twitter:title" content="Notebook — Free Offline Note Taking App">
   <meta name="twitter:description" content="A beautiful, private notebook app that runs entirely in your browser. No account needed.">
   <meta name="twitter:image" content="https://notebook.app/og-image.png">
+  <meta property="og:url" content="https://notebook.app">
   <link rel="canonical" href="https://notebook.app">
   <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
   <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
@@ -118,13 +120,31 @@
           "@type": "Answer",
           "text": "Notebook supports Ctrl+B (or Cmd+B) for bold, Ctrl+I (or Cmd+I) for italic, and Ctrl+N (or Cmd+N) to create a new note. The formatting toolbar also provides buttons for headings, bulleted lists, and numbered lists."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I lose my notes if I clear my browser data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — since notes are stored in localStorage, clearing your browser data will remove them. We recommend using the Export feature regularly to back up your notes as a JSON file. You can restore them anytime with Import."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Notebook on my phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Notebook is fully responsive and works on mobile devices. The sidebar slides in from the left, and you can long-press notes to drag and reorder them with touch."
+        }
       }
     ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inconsolata:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <!-- Critical fonts: loaded upfront -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <!-- Optional fonts: lazy-loaded when selected in font picker -->
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -407,7 +427,7 @@
       gap: 10px;
       margin-top: 4px;
       font-family: var(--font-ui);
-      font-size: 0.72rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
 
@@ -625,7 +645,7 @@
       padding: 8px 24px;
       border-top: 1px solid var(--border);
       font-family: var(--font-ui);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       background: var(--toolbar-bg);
       flex-shrink: 0;
@@ -646,7 +666,7 @@
       margin-bottom: 24px;
       opacity: 0.3;
     }
-    #main-empty-state h1 {
+    #main-empty-state h2 {
       font-family: var(--font-heading);
       font-size: 2rem;
       font-weight: 500;
@@ -933,6 +953,8 @@
   </style>
 </head>
 <body>
+  <a href="#editor" class="sr-only" style="position:absolute;top:-100px;left:0;z-index:9999;background:var(--accent);color:#fff;padding:8px 16px;border-radius:0 0 8px 0;font-family:var(--font-ui);font-size:0.9rem;text-decoration:none;transition:top 0.2s" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Skip to editor</a>
+
   <!-- Mobile header (visible only on small screens) -->
   <header class="mobile-header" style="display:none">
     <button class="hamburger" id="hamburger-top" aria-label="Open sidebar" title="Open sidebar">
@@ -1047,7 +1069,7 @@
       <!-- Main empty state -->
       <div id="main-empty-state">
         <div class="empty-icon">&#128221;</div>
-        <h1>Welcome to Notebook</h1>
+        <h2>Welcome to Notebook</h2>
         <p>A beautiful, distraction-free space for your thoughts. Create your first note to get started.</p>
         <button class="btn btn-primary" id="btn-empty-new-note">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg>
@@ -1130,6 +1152,24 @@
       localStorage.setItem(key, JSON.stringify(val));
     }
 
+    // ===== Lazy Font Loading =====
+    const lazyFonts = {
+      "'Merriweather', serif": 'Merriweather:ital,wght@0,400;0,700;1,400;1,700',
+      "'EB Garamond', serif": 'EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500',
+      "'Inconsolata', monospace": 'Inconsolata:wght@400;500;700'
+    };
+    const loadedFonts = new Set();
+
+    function loadFontIfNeeded(fontValue) {
+      if (lazyFonts[fontValue] && !loadedFonts.has(fontValue)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=' + lazyFonts[fontValue] + '&display=swap';
+        document.head.appendChild(link);
+        loadedFonts.add(fontValue);
+      }
+    }
+
     // ===== State Persistence =====
     function loadState() {
       notes = loadJSON(KEYS.notes, {});
@@ -1153,6 +1193,7 @@
       // Font
       const savedFont = localStorage.getItem(KEYS.font);
       if (savedFont) {
+        loadFontIfNeeded(savedFont);
         editor.style.fontFamily = savedFont;
         fontPicker.value = savedFont;
       }
@@ -1345,7 +1386,7 @@
         statusBar.style.display = 'none';
       } else if (!hasActive) {
         mainEmptyState.style.display = 'flex';
-        mainEmptyState.querySelector('h1').textContent = 'Select a Note';
+        mainEmptyState.querySelector('h2').textContent = 'Select a Note';
         mainEmptyState.querySelector('p').textContent = 'Choose a note from the sidebar, or create a new one.';
         mainEmptyState.querySelector('.btn').style.display = 'none';
         editorScroll.style.display = 'none';
@@ -1357,7 +1398,7 @@
         toolbar.style.display = 'flex';
         statusBar.style.display = 'flex';
         // Reset
-        mainEmptyState.querySelector('h1').textContent = 'Welcome to Notebook';
+        mainEmptyState.querySelector('h2').textContent = 'Welcome to Notebook';
         mainEmptyState.querySelector('p').textContent = 'A beautiful, distraction-free space for your thoughts. Create your first note to get started.';
         mainEmptyState.querySelector('.btn').style.display = '';
       }
@@ -1575,6 +1616,7 @@
     // ===== Font Picker =====
     fontPicker.addEventListener('change', () => {
       const font = fontPicker.value;
+      loadFontIfNeeded(font);
       editor.style.fontFamily = font;
       localStorage.setItem(KEYS.font, font);
     });
@@ -1951,6 +1993,11 @@
     }
 
     init();
+
+    // ===== Service Worker Registration =====
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
   })();
   </script>
 
@@ -2027,6 +2074,21 @@
 
     <h2>Accessibility</h2>
     <p>Notebook is built with accessibility in mind. The interface uses proper ARIA roles and labels, supports full keyboard navigation, and provides screen reader announcements for all actions like creating notes, deleting notes, and toggling dark mode. The note list can be navigated with arrow keys, and focus is automatically managed when creating or selecting notes.</p>
+
+    <h2>Notebook vs Other Note-Taking Apps</h2>
+    <p>Looking for an alternative to popular note-taking apps that respects your privacy? Here's how Notebook compares:</p>
+
+    <h3>Notebook vs Google Keep</h3>
+    <p>Google Keep requires a Google account and stores all notes on Google's servers. Your data is used to improve Google's products and may appear in personalized ads. Notebook stores everything locally in your browser — no account, no cloud, no data collection. If you want a quick notepad without giving Google more of your data, Notebook is the private alternative.</p>
+
+    <h3>Notebook vs Notion</h3>
+    <p>Notion is a powerful workspace but requires an account, loads slowly, and stores all data on their servers. It's overkill for simple note-taking. Notebook loads instantly as a single HTML file, works offline, and keeps your notes on your device. For distraction-free writing without the complexity, Notebook delivers.</p>
+
+    <h3>Notebook vs Simplenote</h3>
+    <p>Simplenote is minimal and syncs across devices, but still requires an account and sends your notes to Automattic's servers. Notebook takes minimalism further — no account creation, no sync servers, no data leaving your device. Trade cross-device sync for complete privacy and zero setup.</p>
+
+    <h3>Notebook vs Apple Notes</h3>
+    <p>Apple Notes is locked to the Apple ecosystem and requires an iCloud account. Notebook works on any device with a browser — Windows, Mac, Linux, Android, iOS. No ecosystem lock-in, no account required, and your notes are exportable as standard JSON or Markdown files anytime.</p>
 
     <h2>Frequently Asked Questions</h2>
 
