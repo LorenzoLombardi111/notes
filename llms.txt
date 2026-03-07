@@ -1,0 +1,40 @@
+# freenotepad.app
+
+> A free, private online notepad and memo app that runs entirely in the browser. No login required, no cloud storage, no tracking. Notes are saved to localStorage on the user's device.
+
+## Key Facts
+- 100% free, no ads, no premium tier
+- No account or login required
+- Notes stored locally in browser localStorage (never sent to any server)
+- Works fully offline after first load (PWA with service worker)
+- Rich text editing (bold, italic, headings, lists, code)
+- Markdown mode with toggle
+- Export as JSON (all notes) or Markdown (individual notes)
+- Import with merge or replace options
+- Dark mode with persistent preference
+- 6 font choices (Lora, Playfair Display, Merriweather, EB Garamond, Inconsolata, DM Sans)
+- Pin, search, drag-and-drop reorder notes
+- Trash with 30-day retention
+- Keyboard shortcuts (Ctrl+B, Ctrl+I, Ctrl+N)
+- Fully responsive, mobile-friendly
+- Single HTML file, no external dependencies beyond Google Fonts
+- Accessible (ARIA roles, keyboard navigation, screen reader announcements)
+
+## Pages
+
+- [Home — Online Notepad & Memo App](https://freenotepad.app/)
+- [Online Notepad](https://freenotepad.app/online-notepad.html): Pillar page about using freenotepad.app as an online notepad
+- [Memo App](https://freenotepad.app/memo-app.html): Pillar page about using freenotepad.app as a memo app
+- [Note-Taking Tips](https://freenotepad.app/note-taking-tips.html): Guide to effective note-taking methods and techniques
+- [Private Notes App](https://freenotepad.app/privacy-notes-app.html): Why local-first note-taking protects your privacy
+- [Offline Notepad](https://freenotepad.app/offline-notepad.html): How freenotepad.app works without internet
+- [vs Google Keep](https://freenotepad.app/vs-google-keep.html): Comparison with Google Keep
+- [vs Notion](https://freenotepad.app/vs-notion.html): Comparison with Notion
+- [vs Simplenote](https://freenotepad.app/vs-simplenote.html): Comparison with Simplenote
+- [vs Apple Notes](https://freenotepad.app/vs-apple-notes.html): Comparison with Apple Notes
+- [vs Evernote](https://freenotepad.app/vs-evernote.html): Comparison with Evernote
+- [vs Obsidian](https://freenotepad.app/vs-obsidian.html): Comparison with Obsidian
+
+## Full Content
+
+For the complete text content of all pages, see [llms-full.txt](https://freenotepad.app/llms-full.txt).

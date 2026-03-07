@@ -23,6 +23,11 @@
   <meta name="twitter:image" content="https://freenotepad.app/og-image.png">
   <meta property="og:url" content="https://freenotepad.app">
   <link rel="canonical" href="https://freenotepad.app">
+  <!-- hreflang tags: add when translations are available
+  <link rel="alternate" hreflang="en" href="https://freenotepad.app/">
+  <link rel="alternate" hreflang="es" href="https://freenotepad.app/es/">
+  <link rel="alternate" hreflang="x-default" href="https://freenotepad.app/">
+  -->
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
   <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
@@ -2420,23 +2425,24 @@
 
   <!-- SEO Content: below the 100vh app fold, fully crawlable by search engines -->
   <section class="seo-content" aria-label="About freenotepad.app">
+    <p style="font-family:var(--font-ui,'DM Sans',sans-serif);font-size:0.85rem;color:var(--text-muted,#8a8580);margin-bottom:1.5rem;">Last updated March 7, 2026</p>
     <h1>Free Online Notepad &amp; Memo App — Take Notes in Your Browser</h1>
-    <p>freenotepad.app is a free <strong>online notepad</strong> and <strong>memo app</strong> that runs entirely in your browser. Use it as a <strong>notepad online</strong> — no account to create, no data sent to servers, and no tracking whatsoever. Just open the page and start writing. Your <strong>notes online</strong> are saved automatically to your device using your browser's local storage.</p>
-    <p>Whether you need <strong>browser notes</strong> for quick ideas, an <strong>online memo</strong> pad for meeting notes, or a distraction-free space for long-form writing, freenotepad.app gives you a clean, beautiful environment that feels like writing on premium paper. Keep all your <strong>notes in browser</strong> — private, fast, and always available.</p>
+    <p>freenotepad.app is a free <strong>online notepad</strong> and <strong>memo app</strong> that runs entirely in your browser with no login required. Notes are saved automatically to your device using localStorage — nothing is sent to any server. freenotepad.app supports rich text formatting, dark mode, 6 font choices, Markdown export, and works fully offline as a PWA. The entire app is a single HTML file under 90KB (excluding fonts) that loads in under 200 milliseconds.</p>
+    <p>Whether you need <strong>browser notes</strong> for quick ideas, an <strong>online memo</strong> pad for meeting notes, or a distraction-free space for long-form writing, freenotepad.app gives you a clean, beautiful environment that feels like writing on premium paper. localStorage provides 5–10MB of storage per domain, which is enough for thousands of notes. Keep all your <strong>notes in browser</strong> — private, fast, and always available.</p>
 
-    <h2>Features</h2>
+    <h2>What features does freenotepad.app offer?</h2>
     <div class="features-grid">
       <div class="feature-card">
         <h3>No Account Required</h3>
-        <p>Start writing immediately. This online notepad needs no sign-up, no login, no email. Your notes are yours alone.</p>
+        <p>Start writing immediately. freenotepad.app needs no sign-up, no login, no email. Your notes are yours alone.</p>
       </div>
       <div class="feature-card">
         <h3>Works Online &amp; Offline</h3>
-        <p>Use as a notepad online or offline. Once loaded, freenotepad.app works without an internet connection. Take notes anywhere.</p>
+        <p>freenotepad.app works without an internet connection after the first load. A service worker caches the app for <a href="/offline-notepad.html">offline use</a> on all modern browsers (Chrome 40+, Firefox 44+, Safari 11.1+, Edge 17+).</p>
       </div>
       <div class="feature-card">
         <h3>100% Private</h3>
-        <p>Notes never leave your device. No cloud storage, no analytics, no third-party access to your writing.</p>
+        <p>Notes never leave your device. freenotepad.app has no cloud storage, no analytics, no tracking pixels, and no third-party access to your writing. Learn more about <a href="/privacy-notes-app.html">why local-first notes matter</a>.</p>
       </div>
       <div class="feature-card">
         <h3>Rich Text Editing</h3>
@@ -2456,12 +2462,12 @@
       </div>
       <div class="feature-card">
         <h3>Beautiful Typography</h3>
-        <p>Choose from six carefully curated fonts: Lora, Playfair Display, Merriweather, EB Garamond, Inconsolata, and DM Sans.</p>
+        <p>Choose from 6 carefully curated typeface families: Lora, Playfair Display, Merriweather, EB Garamond, Inconsolata, and DM Sans.</p>
       </div>
     </div>
 
-    <h2>How This Online Notepad Works</h2>
-    <p>freenotepad.app is a single HTML file with no external dependencies beyond Google Fonts. Everything — the interface, logic, and storage — runs in your browser. Your notes in browser are saved to <strong>localStorage</strong>, which means they persist between sessions but stay entirely on your device. It's the simplest online notepad you'll find.</p>
+    <h2>How does this free online notepad work?</h2>
+    <p>freenotepad.app is a single HTML file with no external dependencies beyond Google Fonts. Everything — the interface, logic, and storage — runs in your browser. freenotepad.app saves notes to <strong>localStorage</strong>, which means they persist between sessions but stay entirely on your device. localStorage is supported in Chrome 4+, Firefox 3.5+, Safari 4+, and Edge 12+, covering over 99% of active browsers worldwide.</p>
     <ul>
       <li><strong>Create a note or memo</strong> — Click "New Note" or press Ctrl+N (Cmd+N on Mac)</li>
       <li><strong>Write and format</strong> — Use the toolbar or keyboard shortcuts for bold, italic, headings, and lists</li>
@@ -2470,11 +2476,11 @@
       <li><strong>Stay private</strong> — No data ever leaves your browser. No servers involved.</li>
     </ul>
 
-    <h2>Your Browser Is Your Notepad</h2>
-    <p>Stop switching between apps. freenotepad.app turns your browser into a powerful <strong>notepad</strong> — open a tab and start writing. Unlike traditional online notes tools that require accounts and store your data on remote servers, this <strong>memo app</strong> keeps everything local. Your browser notes are saved the moment you type, and they're waiting for you when you come back.</p>
-    <p>Use it as an <strong>online memo</strong> pad for work, a private journal, a study tool, or a quick scratch pad. Whether you call it an <strong>online notepad</strong>, a <strong>memo app</strong>, or just a place to keep <strong>notes online</strong> — freenotepad.app does the job beautifully, without asking for your email address.</p>
+    <h2>Can I use my browser as a notepad?</h2>
+    <p>freenotepad.app turns your browser into a powerful <strong>notepad</strong> — open a tab and start writing. Unlike traditional online notes tools that require accounts and store your data on remote servers, freenotepad.app keeps everything local. Your browser notes are saved the moment you type, and they are waiting for you when you come back.</p>
+    <p>freenotepad.app works as an <strong>online memo</strong> pad for work, a private journal, a study tool, or a quick scratch pad. Whether you call it an <strong>online notepad</strong>, a <strong>memo app</strong>, or just a place to keep <strong>notes online</strong> — freenotepad.app does the job beautifully, without asking for your email address. Learn more about <a href="/note-taking-tips.html">effective note-taking techniques</a> or why <a href="/privacy-notes-app.html">local-first note-taking protects your privacy</a>.</p>
 
-    <h2>Keyboard Shortcuts</h2>
+    <h2>What keyboard shortcuts does freenotepad.app support?</h2>
     <ul>
       <li><strong>Ctrl+B</strong> (Cmd+B on Mac) — Bold selected text</li>
       <li><strong>Ctrl+I</strong> (Cmd+I on Mac) — Italicize selected text</li>
@@ -2483,27 +2489,27 @@
       <li><strong>Enter</strong> — Open the focused note</li>
     </ul>
 
-    <h2>Why Choose This Notepad Over Other Note-Taking Apps?</h2>
-    <p>Most online notes apps and memo tools require you to create an account, store your data on their servers, and trust them with your private thoughts. This online notepad takes a different approach:</p>
+    <h2>Why is freenotepad.app better than other note-taking apps?</h2>
+    <p>Most online notes apps and memo tools require you to create an account, store your data on their servers, and trust them with your private thoughts. freenotepad.app takes a fundamentally different approach:</p>
     <ul>
       <li><strong>No vendor lock-in</strong> — Export your data anytime as standard JSON or Markdown files</li>
       <li><strong>No subscription fees</strong> — Free forever, with no premium tiers or paid features</li>
-      <li><strong>No internet dependency</strong> — Works fully offline after the first load</li>
+      <li><strong>No internet dependency</strong> — Works fully <a href="/offline-notepad.html">offline</a> after the first load</li>
       <li><strong>No privacy concerns</strong> — Zero data collection, zero tracking, zero ads</li>
       <li><strong>No setup</strong> — Open a single HTML file and you're ready to write</li>
     </ul>
 
-    <h2>Accessibility</h2>
+    <h2>Is freenotepad.app accessible for screen readers?</h2>
     <p>freenotepad.app is built with accessibility in mind. The interface uses proper ARIA roles and labels, supports full keyboard navigation, and provides screen reader announcements for all actions like creating notes, deleting notes, and toggling dark mode. The note list can be navigated with arrow keys, and focus is automatically managed when creating or selecting notes.</p>
 
-    <h2>freenotepad.app vs Other Note-Taking Apps</h2>
-    <p>Looking for an alternative to popular note-taking apps that respects your privacy? Here's how freenotepad.app compares:</p>
+    <h2>How does freenotepad.app compare to other note-taking apps?</h2>
+    <p>Looking for an alternative to popular note-taking apps that respects your privacy? Here is how freenotepad.app compares:</p>
 
     <h3><a href="/vs-google-keep.html">freenotepad.app vs Google Keep</a></h3>
     <p>Google Keep requires a Google account and stores all notes on Google's servers. Your data is used to improve Google's products and may appear in personalized ads. freenotepad.app stores everything locally in your browser — no account, no cloud, no data collection. If you want a quick notepad without giving Google more of your data, freenotepad.app is the private alternative. <a href="/vs-google-keep.html">Read the full comparison →</a></p>
 
     <h3><a href="/vs-notion.html">freenotepad.app vs Notion</a></h3>
-    <p>Notion is a powerful workspace but requires an account, loads slowly, and stores all data on their servers. It's overkill for simple note-taking. freenotepad.app loads instantly as a single HTML file, works offline, and keeps your notes on your device. For distraction-free writing without the complexity, freenotepad.app delivers. <a href="/vs-notion.html">Read the full comparison →</a></p>
+    <p>Notion is a powerful workspace but requires an account, loads slowly (2–5 seconds), and stores all data on their servers. Notion costs $8–15 per month for full features. freenotepad.app loads instantly as a single HTML file, works offline, and keeps your notes on your device. For distraction-free writing without the complexity, freenotepad.app delivers. <a href="/vs-notion.html">Read the full comparison →</a></p>
 
     <h3><a href="/vs-simplenote.html">freenotepad.app vs Simplenote</a></h3>
     <p>Simplenote is minimal and syncs across devices, but still requires an account and sends your notes to Automattic's servers. freenotepad.app takes minimalism further — no account creation, no sync servers, no data leaving your device. Trade cross-device sync for complete privacy and zero setup. <a href="/vs-simplenote.html">Read the full comparison →</a></p>
@@ -2512,10 +2518,10 @@
     <p>Apple Notes is locked to the Apple ecosystem and requires an iCloud account. freenotepad.app works on any device with a browser — Windows, Mac, Linux, Android, iOS. No ecosystem lock-in, no account required, and your notes are exportable as standard JSON or Markdown files anytime. <a href="/vs-apple-notes.html">Read the full comparison →</a></p>
 
     <h3><a href="/vs-evernote.html">freenotepad.app vs Evernote</a></h3>
-    <p>Evernote was once the king of note-taking, but years of feature bloat, slow performance, and expensive subscription tiers have driven many users to look for alternatives. freenotepad.app is free forever, loads instantly, and keeps your notes private. No account, no upsells, no ads. <a href="/vs-evernote.html">Read the full comparison →</a></p>
+    <p>Evernote was once the king of note-taking, but years of feature bloat, slow performance, and a $14.99/month premium subscription have driven many users to look for alternatives. freenotepad.app is free forever, loads instantly, and keeps your notes private. No account, no upsells, no ads. <a href="/vs-evernote.html">Read the full comparison →</a></p>
 
     <h3><a href="/vs-obsidian.html">freenotepad.app vs Obsidian</a></h3>
-    <p>Obsidian is a powerful knowledge management tool with bidirectional linking, a graph view, and hundreds of plugins. But it requires installation and configuration. freenotepad.app is the opposite — zero setup, works in any browser, focused on writing rather than knowledge graphs. Different tools for different needs. <a href="/vs-obsidian.html">Read the full comparison →</a></p>
+    <p>Obsidian is a powerful knowledge management tool with bidirectional linking, a graph view, and over 1,000 community plugins. But Obsidian requires installation and configuration. freenotepad.app is the opposite — zero setup, works in any browser, focused on writing rather than knowledge graphs. Different tools for different needs. <a href="/vs-obsidian.html">Read the full comparison →</a></p>
 
     <h2>Frequently Asked Questions</h2>
 
@@ -2578,6 +2584,9 @@
   <footer class="seo-footer">
     <p>freenotepad.app — A free <a href="/online-notepad.html" style="color:var(--text-muted)">online notepad</a> and <a href="/memo-app.html" style="color:var(--text-muted)">memo app</a>. Take notes in your browser with no account required.</p>
     <p style="margin-top:12px">
+      <a href="/note-taking-tips.html" style="color:var(--text-muted)">Note-Taking Tips</a> ·
+      <a href="/privacy-notes-app.html" style="color:var(--text-muted)">Private Notes</a> ·
+      <a href="/offline-notepad.html" style="color:var(--text-muted)">Offline Notepad</a> ·
       <a href="/vs-google-keep.html" style="color:var(--text-muted)">vs Google Keep</a> ·
       <a href="/vs-notion.html" style="color:var(--text-muted)">vs Notion</a> ·
       <a href="/vs-simplenote.html" style="color:var(--text-muted)">vs Simplenote</a> ·

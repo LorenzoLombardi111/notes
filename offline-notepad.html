@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Offline Notepad: Write Without Internet | freenotepad.app</title>
+  <meta name="description" content="Need a notepad that works without internet? freenotepad.app is a free offline notepad with rich text, dark mode, and auto-save. No login, no cloud required.">
+  <meta name="keywords" content="offline notepad, notepad without internet, offline notes app, write offline, offline writing app">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="freenotepad.app">
+  <meta property="og:title" content="Best Offline Notepad: Write Without Internet | freenotepad.app">
+  <meta property="og:description" content="A free offline notepad that works without internet. Rich text editing, dark mode, auto-save — all in your browser. No login, no cloud required.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="freenotepad.app">
+  <meta property="og:url" content="https://freenotepad.app/offline-notepad.html">
+  <meta property="og:image" content="https://freenotepad.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="freenotepad.app — A free offline notepad in your browser">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Offline Notepad: Write Without Internet">
+  <meta name="twitter:description" content="A free offline notepad that works without internet. Rich text editing, dark mode, auto-save — all in your browser. No login or cloud required.">
+  <meta name="twitter:image" content="https://freenotepad.app/og-image.png">
+  <link rel="canonical" href="https://freenotepad.app/offline-notepad.html">
+  <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <!-- hreflang: add localized versions here as the site expands -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Best Offline Notepad: Write Without Internet",
+    "description": "A free offline notepad that works without internet. Rich text editing, dark mode, auto-save — all in your browser with no login required.",
+    "datePublished": "2026-03-07",
+    "dateModified": "2026-03-07",
+    "author": {
+      "@type": "Organization",
+      "name": "freenotepad.app",
+      "url": "https://freenotepad.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "freenotepad.app",
+      "url": "https://freenotepad.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://freenotepad.app/offline-notepad.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://freenotepad.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Offline Notepad",
+        "item": "https://freenotepad.app/offline-notepad.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "freenotepad.app",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any (Web Browser)",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Offline access, Rich text editing, Dark mode, Auto-save, No login required",
+    "url": "https://freenotepad.app"
+  }
+  </script>
+  <style>
+    :root, [data-theme="light"] {
+      --bg: #faf8f5;
+      --bg-sidebar: #f3f0eb;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --accent-hover: #a07608;
+      --font-body: 'Lora', serif;
+      --font-heading: 'Playfair Display', serif;
+      --font-ui: 'DM Sans', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --bg-sidebar: #222222;
+      --text: #e0ddd8;
+      --text-muted: #8a8580;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+      --accent-hover: #e0b030;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 17px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+    }
+
+    .brand {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .brand:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-family: var(--font-ui);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .breadcrumb {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+    }
+
+    article {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.3;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-top: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    ul, ol {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    li strong {
+      color: var(--text-heading);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .cta-section {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2.5rem 2rem;
+      background: var(--bg-sidebar);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .cta-section p {
+      font-family: var(--font-ui);
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.85rem 2.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cta-button:hover {
+      background: var(--accent-hover);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .related-pages {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-pages h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .related-links li {
+      margin-bottom: 0;
+    }
+
+    .related-links a {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .related-links a:hover {
+      border-color: var(--accent);
+      background: var(--bg-sidebar);
+      color: var(--accent);
+    }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 1.2rem 1.25rem;
+      }
+
+      .breadcrumb {
+        padding: 0 1.25rem;
+      }
+
+      main {
+        padding: 0.75rem 1.25rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.35rem;
+      }
+
+      footer {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="brand">freenotepad.app</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span id="themeIcon">&#9790;</span>
+    </button>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="/">Home</a> <span>&rsaquo;</span> Offline Notepad
+  </div>
+
+  <main>
+    <article>
+      <h1>Best Offline Notepad: Write Without Internet</h1>
+      <p class="subtitle">Last updated March 7, 2026</p>
+
+      <p>The best offline notepad is <a href="/">freenotepad.app</a> — a free, browser-based writing tool that works entirely without an internet connection. Once you load the page, everything runs locally on your device. Your notes are saved automatically to your browser's built-in storage, the full rich text editor stays functional, and you can keep writing whether your Wi-Fi drops, your flight enters airplane mode, or you are simply somewhere without connectivity. There is no login, no cloud dependency, and no data ever leaves your machine.</p>
+
+      <p>What makes this <strong>offline notepad</strong> stand out is that it requires nothing beyond a web browser. You do not need to install a desktop application, create an account, or configure synchronization settings. It loads once, caches itself as a Progressive Web App, and then remains available even when you are completely disconnected from the internet. For anyone who needs a reliable <strong>notepad without internet</strong> access, this is the simplest and most private option available today.</p>
+
+      <h2>What Is an Offline Notepad?</h2>
+
+      <p>An offline notepad is a writing tool that continues to function when you have no internet connection. Unlike traditional web applications that require a constant connection to a server, an <strong>offline notes app</strong> stores everything locally and runs its interface entirely on your device. You can create, edit, format, and organize notes without sending a single byte of data over the network.</p>
+
+      <p>This distinction matters more than it might seem. Most web-based tools fail silently when connectivity drops — you click save and nothing happens, or the page refuses to load at all. A true offline notepad is designed from the ground up to work independently. It treats the network as optional rather than essential. Your writing session is never interrupted by a lost connection, a slow hotel Wi-Fi, or a spotty mobile signal in a rural area.</p>
+
+      <p>Offline notepads come in different forms. Some are native desktop applications like <a href="/vs-obsidian.html">Obsidian</a> or traditional text editors. Others, like freenotepad.app, are web applications that use modern browser technologies to deliver the same offline reliability you would expect from installed software — without the installation step.</p>
+
+      <h2>How Does freenotepad.app Work Offline?</h2>
+
+      <p>When you first visit <a href="/">freenotepad.app</a>, your browser downloads the entire application — the HTML, CSS, JavaScript, and all the assets needed to run the editor. From that point forward, the app is cached locally on your device. The next time you open it, your browser loads the cached version instead of fetching it from the internet. This is the same technology that allows other modern web apps to work offline, but freenotepad.app is specifically designed to make offline use seamless rather than an afterthought.</p>
+
+      <p>Your notes themselves are stored using your browser's localStorage API, which keeps data persistently on your device. Every keystroke triggers an automatic save. There is no "save" button to forget, no sync conflict to resolve, and no server that needs to acknowledge your changes. The data lives on your machine and stays there. When you come back online, nothing changes — the app does not suddenly upload your notes to a cloud service. Your <a href="/privacy-notes-app.html">privacy</a> is maintained whether you are online or off.</p>
+
+      <p>This architecture means the app starts instantly even on slow connections, because there is nothing to download after the initial visit. It also means that clearing your browser's cache or data will remove the cached app and your notes, so the built-in export feature is important for anything you want to keep long-term.</p>
+
+      <h2>What Is a Progressive Web App (PWA)?</h2>
+
+      <p>A Progressive Web App is a website that behaves like a native application installed on your device. PWAs use a technology called a service worker — a small script that runs in the background of your browser and intercepts network requests. When you visit a PWA for the first time, the service worker caches the application's files. On subsequent visits, it serves those cached files directly, bypassing the network entirely. This is what enables offline functionality.</p>
+
+      <p>Service workers are supported by over 97% of modern browsers worldwide, including Chrome, Firefox, Safari, and Edge on both desktop and mobile. The technology has matured significantly since its introduction and is now considered a standard part of the web platform. Major companies including Twitter, Pinterest, and Starbucks use PWAs to deliver fast, reliable experiences even on unreliable networks.</p>
+
+      <p>For a notepad application, the PWA approach is ideal. The app is small enough to cache completely, the data model is simple enough to store locally, and the use case — writing and organizing text — does not inherently require a network connection. You get the convenience of a web app (no app store, no installation, works on any platform) with the reliability of native software (works offline, launches instantly, feels responsive).</p>
+
+      <p>You can even "install" a PWA to your home screen on mobile devices or your desktop, giving it its own app icon and window. It looks and feels like a native app, but underneath it is still a web page — one that happens to work perfectly without the web.</p>
+
+      <h2>What Features Does freenotepad.app Offer Offline?</h2>
+
+      <p>Everything. That is the short answer, and it is not an exaggeration. Because freenotepad.app is designed as an offline-first application, every feature works identically whether you are connected to the internet or not.</p>
+
+      <ul>
+        <li><strong>Rich text editing.</strong> Bold, italic, underline, strikethrough, headings, bullet lists, numbered lists, and blockquotes all work offline. The formatting toolbar is fully functional without a network connection.</li>
+        <li><strong>Multiple notes.</strong> Create, rename, delete, and switch between as many notes as you need. The sidebar and note list operate entirely from local data.</li>
+        <li><strong>Search.</strong> Search across all your notes by keyword. The search happens locally and instantly — there is no server query involved.</li>
+        <li><strong>Pin and reorder.</strong> Pin important notes to the top of your list or drag them into any order. Organization features work completely offline.</li>
+        <li><strong>Dark mode.</strong> Toggle between light and dark themes at any time. Your preference is saved locally and remembered across sessions.</li>
+        <li><strong>Auto-save.</strong> Every change is saved to localStorage automatically as you type. No manual save step, no risk of losing work if you close the tab.</li>
+        <li><strong>Export.</strong> Export individual notes as Markdown or back up your entire collection as JSON. These exports work offline because they generate files directly in your browser.</li>
+        <li><strong>Font selection.</strong> Choose from multiple typefaces to customize your writing environment. Font preferences persist offline.</li>
+      </ul>
+
+      <p>The only thing that requires an internet connection is the very first visit to load the app. After that, you could disconnect entirely and use freenotepad.app for weeks without noticing any difference. This makes it a genuine <strong>offline writing app</strong>, not just a web app with a fallback mode.</p>
+
+      <h2>Can I Use an Offline Notepad on My Phone?</h2>
+
+      <p>Yes, and this is one of the strongest advantages of a PWA-based offline notepad. Because freenotepad.app runs in any modern mobile browser, it works on iPhones, Android phones, and tablets without downloading anything from an app store. Open the page once while you have a connection, and the app caches itself. From that point on, you can open it from your browser history or home screen and write offline.</p>
+
+      <p>On both iOS and Android, you can add freenotepad.app to your home screen. On Android with Chrome, tap the menu and select "Add to Home Screen" or look for the install prompt. On iOS with Safari, tap the share button and choose "Add to Home Screen." The app then launches in its own window without browser chrome, behaving like a native app. It starts instantly, works offline, and your notes are always accessible.</p>
+
+      <p>This is particularly useful for situations where mobile connectivity is unreliable — commuting through tunnels, traveling in areas with poor signal coverage, or simply trying to avoid data usage. Your <strong>offline notes app</strong> is always ready, regardless of your cellular signal strength. According to industry data, mobile users in many regions experience connectivity interruptions multiple times per day, making offline capability a practical necessity rather than a luxury feature.</p>
+
+      <h2>How Does Offline Storage Work in the Browser?</h2>
+
+      <p>Modern browsers provide several mechanisms for storing data locally, and understanding them helps explain why an offline notepad can be so reliable.</p>
+
+      <p><strong>localStorage</strong> is the simplest storage mechanism. It provides a key-value store that persists across browser sessions. Data stored in localStorage remains available until explicitly cleared by the user or the application. Most browsers allocate between 5 and 10 megabytes per origin (per website), which is enough to store thousands of typical text notes. freenotepad.app uses localStorage to save your notes, settings, and preferences.</p>
+
+      <p><strong>Service worker caches</strong> store the application files themselves — the HTML, CSS, JavaScript, fonts, and other assets needed to render the interface. When the service worker intercepts a request for one of these files, it can serve the cached version instead of making a network request. This is what allows the app to load without an internet connection. Service worker caches can store significantly more data than localStorage, often up to 50 megabytes or more depending on the browser and available disk space.</p>
+
+      <p><strong>IndexedDB</strong> is a more powerful client-side database that supports structured data, indexes, and transactions. While freenotepad.app primarily uses localStorage for its simplicity, IndexedDB is available as an option for applications that need to store larger volumes of data or more complex data structures. IndexedDB storage limits are typically much more generous, often scaling into hundreds of megabytes.</p>
+
+      <p>All of these storage mechanisms share one important characteristic: the data stays on your device. Nothing is transmitted to a server. This is fundamentally different from cloud-based note apps like <a href="/vs-google-keep.html">Google Keep</a> or <a href="/vs-evernote.html">Evernote</a>, where your notes exist primarily on someone else's servers and are synced to your device as copies. With browser-based local storage, your device is the primary — and only — location for your data.</p>
+
+      <h2>When Offline Access Really Matters</h2>
+
+      <p>Offline access is not just a technical checkbox. There are real, everyday situations where the ability to <strong>write offline</strong> makes the difference between capturing an idea and losing it.</p>
+
+      <p><strong>Travel.</strong> Airplane mode is the most obvious scenario, but it extends far beyond that. Long train journeys through rural areas, road trips through regions without reliable cell coverage, international travel where data roaming is expensive or unavailable — these are all situations where an offline notepad is not a convenience but a necessity. Writers, journalists, and researchers who work while traveling need tools that do not depend on connectivity.</p>
+
+      <p><strong>Poor or unreliable connectivity.</strong> Not everyone has fast, always-on internet. Coffee shops with overloaded Wi-Fi, co-working spaces with bandwidth limits, schools and libraries with restricted networks, rural areas with weak broadband — these environments are common. A notepad that works offline means your writing session is never held hostage by network conditions. According to global connectivity statistics, approximately 2.6 billion people still lack reliable internet access, making offline-capable tools essential for a significant portion of the world's population.</p>
+
+      <p><strong>Privacy and security.</strong> When you use an offline notepad, your words never traverse a network. They are never transmitted to a server, never stored in a cloud database, never potentially exposed by a data breach at a third-party company. For sensitive writing — personal journals, medical notes, legal drafts, confidential business memos — the guarantee that data stays on your device is a meaningful security property. If you value <a href="/privacy-notes-app.html">private note-taking</a>, offline-first design gives you stronger guarantees than any cloud encryption scheme.</p>
+
+      <p><strong>Focus and distraction management.</strong> Working offline is increasingly a deliberate productivity strategy. When your writing tool requires the internet, you are always one tab away from email, social media, and news. An offline notepad lets you disconnect intentionally. Some writers specifically seek out offline tools to create a focused writing environment free from digital interruptions.</p>
+
+      <p><strong>Reliability.</strong> Internet connections fail. DNS servers go down. ISP outages happen. Cloud services experience downtime. An offline notepad is immune to all of these. Your ability to write is never dependent on infrastructure outside your own device. For people who write daily — journalists on deadline, students taking notes in class, professionals capturing meeting notes — that reliability is not optional.</p>
+
+      <h2>What Are the Best Offline Notepad Alternatives?</h2>
+
+      <p>While freenotepad.app provides the simplest path to offline note-taking in a browser, there are other tools worth considering depending on your specific needs.</p>
+
+      <p><strong>Native text editors</strong> — Every operating system ships with a basic text editor (Notepad on Windows, TextEdit on macOS, gedit or nano on Linux). These always work offline because they are installed software. The tradeoff is that they offer no rich text formatting, no organization features, and no way to access your notes from a different device without manual file transfers.</p>
+
+      <p><strong><a href="/vs-obsidian.html">Obsidian</a></strong> — A powerful Markdown-based note-taking application that stores everything as local files. Obsidian works offline by default because your notes are plain text files on your filesystem. It excels at knowledge management with features like bidirectional links and graph views. The tradeoff is complexity: you need to install the application, create a vault, and learn Markdown syntax. It is a serious tool for serious knowledge workers.</p>
+
+      <p><strong><a href="/vs-simplenote.html">Simplenote</a></strong> — A minimalist note-taking app with offline support through its native apps. Notes sync across devices via the cloud, but the native apps cache notes locally so you can read and edit while offline. Changes sync when you reconnect. The tradeoff is that you need an account, and your notes do pass through Simplenote's servers.</p>
+
+      <p><strong><a href="/vs-apple-notes.html">Apple Notes</a></strong> — For users in the Apple ecosystem, Apple Notes works offline on iPhone, iPad, and Mac. Notes are stored locally and sync through iCloud when connected. The app is well-designed and capable. The tradeoff is platform lock-in — Apple Notes is not available on Windows, Linux, or Android, and moving your notes out of the ecosystem is not straightforward.</p>
+
+      <p><strong><a href="/vs-notion.html">Notion</a></strong> — Notion has improved its offline support with local caching in its desktop and mobile apps, but it remains fundamentally a cloud-first application. Complex pages with databases and embeds may not render fully offline. For simple note-taking offline, it works, but it is a heavy tool for a simple task.</p>
+
+      <p>The advantage of freenotepad.app over all of these alternatives is the absence of friction. No download, no account, no configuration. Open a browser tab and write. That simplicity is the point, and it extends to the offline experience — offline access is not a feature you need to enable or configure. It just works.</p>
+
+      <div class="cta-section">
+        <p>Write anywhere, with or without internet. No signup, no download — just open and start.</p>
+        <a href="/" class="cta-button">Open freenotepad.app — Write Offline</a>
+      </div>
+    </article>
+
+    <section class="related-pages">
+      <h2>Related Pages</h2>
+      <ul class="related-links">
+        <li><a href="/online-notepad.html">Online Notepad</a></li>
+        <li><a href="/memo-app.html">Memo App</a></li>
+        <li><a href="/privacy-notes-app.html">Private Notes App</a></li>
+        <li><a href="/vs-google-keep.html">freenotepad.app vs Google Keep</a></li>
+        <li><a href="/vs-notion.html">freenotepad.app vs Notion</a></li>
+        <li><a href="/vs-obsidian.html">freenotepad.app vs Obsidian</a></li>
+        <li><a href="/vs-simplenote.html">freenotepad.app vs Simplenote</a></li>
+        <li><a href="/vs-apple-notes.html">freenotepad.app vs Apple Notes</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="/">freenotepad.app</a> — A free, private notepad in your browser. No login required.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var icon = document.getElementById('themeIcon');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        icon.textContent = theme === 'dark' ? '\u2600' : '\u263E';
+        try { localStorage.setItem('notebook_theme', theme); } catch(e) {}
+      }
+
+      function getPreferredTheme() {
+        try {
+          var saved = localStorage.getItem('notebook_theme');
+          if (saved === 'dark' || saved === 'light') return saved;
+        } catch(e) {}
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+
+      setTheme(getPreferredTheme());
+
+      toggle.addEventListener('click', function() {
+        var current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>
