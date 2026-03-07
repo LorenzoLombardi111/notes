@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebook vs Notion — Simple, Private Alternative (2026)</title>
+  <meta name="description" content="Notebook vs Notion: a detailed comparison. Notebook is a free, private, simple note-taking alternative to Notion — no account, no cloud, works offline instantly.">
+  <meta name="keywords" content="notebook vs notion, notion alternative simple, notion alternative free, simple note app vs notion, notion replacement, private notes app">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Notebook App">
+  <meta property="og:title" content="Notebook vs Notion — Simple, Private Alternative (2026)">
+  <meta property="og:description" content="Comparing Notebook and Notion for note-taking. Notebook is free, private, and simple — a focused alternative when you don't need a full workspace.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Notebook">
+  <meta property="og:image" content="https://notebook.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Notebook vs Notion — comparison of simple note-taking vs full workspace">
+  <meta property="og:url" content="https://notebook.app/vs-notion.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notebook vs Notion — Simple, Private Alternative">
+  <meta name="twitter:description" content="Comparing Notebook and Notion for note-taking. Free, private, and instant vs powerful workspace.">
+  <meta name="twitter:image" content="https://notebook.app/og-image.png">
+  <link rel="canonical" href="https://notebook.app/vs-notion.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Notebook vs Notion: When Simple Beats Powerful",
+    "description": "A detailed comparison of Notebook and Notion for note-taking. Notebook is a free, private, simple alternative to Notion — no account, no cloud, works offline instantly.",
+    "author": {
+      "@type": "Organization",
+      "name": "Notebook App",
+      "url": "https://notebook.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Notebook App",
+      "url": "https://notebook.app"
+    },
+    "datePublished": "2026-03-07",
+    "dateModified": "2026-03-07",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://notebook.app/vs-notion.html"
+    },
+    "image": "https://notebook.app/og-image.png"
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --font-body: 'Lora', 'Georgia', serif;
+      --font-heading: 'Playfair Display', 'Georgia', serif;
+      --font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --transition: 0.2s ease;
+      --radius: 8px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #e0ddd8;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { height: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    /* Nav */
+    .site-nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-nav-brand {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .site-nav-brand:hover { color: var(--accent); }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: relative;
+      width: 40px;
+      height: 22px;
+      border-radius: 11px;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition);
+      flex-shrink: 0;
+    }
+    .theme-toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform var(--transition);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    [data-theme="dark"] .theme-toggle { background: var(--accent); }
+    [data-theme="dark"] .theme-toggle::after { transform: translateX(18px); }
+
+    /* Article */
+    .article-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .article-wrapper h1 {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      transition: color var(--transition);
+    }
+
+    .article-meta {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .article-wrapper h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      transition: color var(--transition);
+    }
+
+    .article-wrapper p {
+      margin-bottom: 1.15rem;
+    }
+
+    .article-wrapper ul, .article-wrapper ol {
+      margin-bottom: 1.15rem;
+      padding-left: 1.5rem;
+    }
+    .article-wrapper li {
+      margin-bottom: 0.4rem;
+    }
+    .article-wrapper li strong {
+      color: var(--text-heading);
+    }
+
+    .article-wrapper a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color var(--transition);
+    }
+    .article-wrapper a:hover {
+      color: var(--text-heading);
+    }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-family: var(--font-ui);
+      font-size: 0.92rem;
+    }
+    .comparison-table thead th {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-heading);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--accent);
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .comparison-table thead th:first-child {
+      width: 30%;
+    }
+    .comparison-table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      transition: border-color var(--transition);
+    }
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table tbody tr:hover {
+      background: rgba(184, 134, 11, 0.04);
+    }
+    [data-theme="dark"] .comparison-table tbody tr:hover {
+      background: rgba(212, 160, 23, 0.06);
+    }
+    .comparison-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--text-heading);
+      transition: color var(--transition);
+    }
+    .comparison-table .check {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .comparison-table .neutral {
+      color: var(--text-muted);
+    }
+
+    /* CTA */
+    .cta-box {
+      margin: 3rem 0 2rem;
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      background: rgba(184, 134, 11, 0.04);
+      transition: background var(--transition), border-color var(--transition);
+    }
+    [data-theme="dark"] .cta-box {
+      background: rgba(212, 160, 23, 0.06);
+    }
+    .cta-box h2 {
+      margin-top: 0 !important;
+      margin-bottom: 0.5rem;
+    }
+    .cta-box p {
+      font-family: var(--font-ui);
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.75rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: opacity var(--transition);
+    }
+    .cta-button:hover { opacity: 0.85; color: #fff; }
+
+    /* Related */
+    .related-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      transition: border-color var(--transition);
+    }
+    .related-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 1rem;
+      transition: color var(--transition);
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+    }
+    .related-links a {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .related-links a:hover {
+      background: rgba(184, 134, 11, 0.08);
+      border-color: var(--accent);
+    }
+
+    /* Footer */
+    .site-footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .site-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .article-wrapper h1 { font-size: 1.75rem; }
+      .article-wrapper h2 { font-size: 1.3rem; }
+      .comparison-table { font-size: 0.82rem; }
+      .comparison-table thead th, .comparison-table tbody td { padding: 0.6rem 0.6rem; }
+      .cta-box { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="site-nav-brand">Notebook</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+  </nav>
+
+  <article class="article-wrapper">
+    <h1>Notebook vs Notion: When Simple Beats Powerful</h1>
+    <div class="article-meta">Updated March 2026</div>
+
+    <p>
+      Notion has become one of the most popular productivity tools in the world, and for good reason. It combines notes, databases, wikis, project management, and team collaboration into a single connected workspace. For teams and power users who need that level of structure, it is genuinely impressive.
+    </p>
+    <p>
+      But here is the thing: most people who open Notion just want to write something down. They want to capture a thought, draft a quick list, or jot a few notes. For that, Notion is like driving a semi truck to the grocery store. <a href="/">Notebook</a> is built for exactly this use case: open a page, start typing, done. No accounts, no setup, no learning curve. Your notes stay on your device, load instantly, and never require an internet connection.
+    </p>
+
+    <h2>Feature Comparison</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Notebook</th>
+          <th>Notion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account Required</td>
+          <td class="check">No</td>
+          <td>Yes, required</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td class="check">Free</td>
+          <td>Freemium ($8-15/mo for full features)</td>
+        </tr>
+        <tr>
+          <td>Load Time</td>
+          <td class="check">Instant</td>
+          <td>2-5 seconds</td>
+        </tr>
+        <tr>
+          <td>Offline Support</td>
+          <td class="check">Full offline</td>
+          <td>Limited (requires sync)</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>Local browser (your device)</td>
+          <td>Notion cloud servers</td>
+        </tr>
+        <tr>
+          <td>Complexity</td>
+          <td class="check">Minimal</td>
+          <td>High (steep learning curve)</td>
+        </tr>
+        <tr>
+          <td>Databases</td>
+          <td class="neutral">No</td>
+          <td class="check">Yes, powerful</td>
+        </tr>
+        <tr>
+          <td>Collaboration</td>
+          <td class="neutral">No</td>
+          <td class="check">Yes, real-time</td>
+        </tr>
+        <tr>
+          <td>Privacy</td>
+          <td class="check">100% local, nothing sent</td>
+          <td>Cloud-stored, third-party access</td>
+        </tr>
+        <tr>
+          <td>Export</td>
+          <td>JSON + Markdown</td>
+          <td>Multiple formats (PDF, HTML, CSV, MD)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Where Notebook Wins</h2>
+    <p>
+      For straightforward note-taking, Notebook has clear advantages over Notion in several areas that matter for everyday use:
+    </p>
+    <ul>
+      <li><strong>Speed.</strong> Notebook loads instantly because it runs entirely in your browser. There is no server to contact, no data to sync, no login screen to pass through. Notion, even on a fast connection, takes several seconds to become interactive. That delay adds up when you just need to capture a quick thought.</li>
+      <li><strong>Simplicity.</strong> Notebook has one job: let you write notes. You open it and start typing. Notion requires you to understand pages, blocks, databases, views, templates, and a host of other concepts before you can use it effectively. Many people spend more time organizing their Notion setup than actually writing.</li>
+      <li><strong>Privacy.</strong> Your notes in Notebook never leave your device. They are stored in your browser's local storage and are never transmitted to any server. Notion stores everything on their cloud infrastructure, which means your private thoughts exist on third-party servers subject to their privacy policies and potential data breaches.</li>
+      <li><strong>Zero learning curve.</strong> If you can type, you can use Notebook. There are no tutorials to watch, no templates to choose, no workspace configuration to figure out. The interface is obvious and familiar.</li>
+      <li><strong>Full offline support.</strong> Once loaded, Notebook works completely without an internet connection. Create, edit, organize, and search your notes entirely offline. Notion's offline mode is limited and occasionally unreliable, especially for pages that have not been recently viewed.</li>
+    </ul>
+
+    <h2>Where Notion Wins</h2>
+    <p>
+      It would be dishonest to pretend Notebook can replace Notion for everyone. Notion is a more powerful tool, and that power genuinely matters for certain workflows:
+    </p>
+    <ul>
+      <li><strong>Databases and structured data.</strong> Notion's relational databases are remarkable. If you need to manage projects, track inventory, or build custom CRM-like systems, Notion handles this natively. Notebook does not attempt to be a database.</li>
+      <li><strong>Team collaboration.</strong> Notion excels at real-time collaboration. Multiple people can edit the same page, leave comments, assign tasks, and share workspaces. Notebook is designed for individual use and has no collaboration features.</li>
+      <li><strong>Templates and ecosystem.</strong> Notion has thousands of community templates for everything from habit trackers to product roadmaps. Its ecosystem of integrations connects to tools like Slack, GitHub, and Google Calendar. Notebook offers none of this.</li>
+      <li><strong>Rich content embedding.</strong> Notion lets you embed videos, code blocks, Figma files, Google Maps, and much more directly in your pages. Notebook focuses on text-based notes with basic formatting.</li>
+    </ul>
+
+    <h2>The Complexity Tax</h2>
+    <p>
+      Notion's power comes at a cost, and it is not just the subscription price. Every feature adds cognitive overhead. When you open Notion to write a simple note, you are confronted with decisions: Which workspace? Which page? Should this be a page or a database entry? What template? What properties should it have? This is what we call the complexity tax: the mental energy spent navigating a system before you even begin the actual work.
+    </p>
+    <p>
+      Research consistently shows that <a href="/memo-app.html">simple tools</a> with lower friction lead to more consistent usage. A note-taking app you actually use beats a powerful system you avoid because it feels like work. Many former Notion users have described the experience of spending hours building elaborate systems only to abandon them weeks later because maintaining the system became a task in itself.
+    </p>
+    <p>
+      The truth is that most personal note-taking does not require databases, relational links, or nested page hierarchies. A quick capture tool that gets out of your way is often more valuable than a configurable workspace that demands your attention. If you find yourself spending more time organizing your notes than writing them, the tool may be working against you rather than for you.
+    </p>
+
+    <h2>Who Should Use Which?</h2>
+    <p>
+      The right choice depends entirely on what you need. Here is a clear guide:
+    </p>
+    <p><strong>Choose Notebook if you:</strong></p>
+    <ul>
+      <li>Want to take quick personal notes without any setup</li>
+      <li>Value privacy and prefer your notes never leaving your device</li>
+      <li>Need something that works offline reliably</li>
+      <li>Find tools like Notion overwhelming or distracting</li>
+      <li>Want a <a href="/vs-google-keep.html">free, simple note app</a> with no strings attached</li>
+      <li>Prefer a <a href="/vs-obsidian.html">minimal writing environment</a> without feature bloat</li>
+    </ul>
+    <p><strong>Choose Notion if you:</strong></p>
+    <ul>
+      <li>Need databases, project management, or structured data</li>
+      <li>Work with a team and need real-time collaboration</li>
+      <li>Want integrations with other tools in your workflow</li>
+      <li>Need a company wiki or knowledge base</li>
+      <li>Are comfortable investing time to learn and maintain a complex system</li>
+    </ul>
+    <p>
+      There is also a middle path: use both. Keep Notebook open for quick daily notes, ideas, and drafts. Use Notion for structured projects and team work. The two do not compete so much as serve different moments in your day. When you need to <em>think</em>, reach for the simpler tool. When you need to <em>build</em>, reach for the more powerful one.
+    </p>
+
+    <div class="cta-box">
+      <h2>Try Notebook — Start Writing in Seconds</h2>
+      <p>No account. No setup. No cloud. Just open and write.</p>
+      <a href="/" class="cta-button">Open Notebook</a>
+    </div>
+
+    <div class="related-section">
+      <h3>More Comparisons</h3>
+      <ul class="related-links">
+        <li><a href="/vs-google-keep.html">Notebook vs Google Keep</a></li>
+        <li><a href="/vs-obsidian.html">Notebook vs Obsidian</a></li>
+        <li><a href="/vs-evernote.html">Notebook vs Evernote</a></li>
+        <li><a href="/memo-app.html">Best Memo Apps</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="/">Notebook</a> — A free, private notepad in your browser.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('nb_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('nb_theme', next);
+      });
+    })();
+  </script>
+</body>
+</html>

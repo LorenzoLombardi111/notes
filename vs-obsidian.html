@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebook vs Obsidian — Simple Browser Alternative (2026)</title>
+  <meta name="description" content="Honest comparison of Notebook and Obsidian. Notebook offers zero-setup browser notes. Obsidian offers knowledge graphs and plugins. Different tools, different needs.">
+  <meta name="keywords" content="notebook vs obsidian, obsidian alternative simple, obsidian alternative browser, simple alternative to obsidian">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Notebook App">
+  <meta property="og:title" content="Notebook vs Obsidian — Simple Browser Alternative (2026)">
+  <meta property="og:description" content="Honest comparison of Notebook and Obsidian. Zero-setup browser notes vs powerful knowledge management — find the right fit.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Notebook">
+  <meta property="og:image" content="https://notebook.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Notebook vs Obsidian comparison">
+  <meta property="og:url" content="https://notebook.app/vs-obsidian.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notebook vs Obsidian — Simple Browser Alternative (2026)">
+  <meta name="twitter:description" content="Honest comparison of Notebook and Obsidian. Zero-setup browser notes vs powerful knowledge management.">
+  <meta name="twitter:image" content="https://notebook.app/og-image.png">
+  <link rel="canonical" href="https://notebook.app/vs-obsidian.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Notebook vs Obsidian: Simplicity vs Knowledge Graphs",
+    "description": "Honest comparison of Notebook and Obsidian. Notebook offers zero-setup browser notes. Obsidian offers knowledge graphs and plugins.",
+    "datePublished": "2026-03-07",
+    "author": {
+      "@type": "Organization",
+      "name": "Notebook App",
+      "url": "https://notebook.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Notebook App",
+      "url": "https://notebook.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://notebook.app/vs-obsidian.html"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root, [data-theme="light"] {
+      --bg: #faf8f5;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --font-body: 'Lora', serif;
+      --font-heading: 'Playfair Display', serif;
+      --font-ui: 'DM Sans', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #e0ddd8;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 17px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-ui);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-heading);
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      transition: border-color 0.3s;
+    }
+
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      color: var(--text-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      color: var(--text-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      color: var(--text-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 2rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1.25rem; }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      font-family: var(--font-ui);
+    }
+
+    .comparison-table thead th {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    .comparison-table thead th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .comparison-table thead th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .comparison-table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .comparison-table tbody tr:nth-child(even) td {
+      background: rgba(0,0,0,0.02);
+    }
+
+    [data-theme="dark"] .comparison-table tbody tr:nth-child(even) td {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .comparison-table tbody tr:last-child td:first-child {
+      border-radius: 0 0 0 8px;
+    }
+
+    .comparison-table tbody tr:last-child td:last-child {
+      border-radius: 0 0 8px 0;
+    }
+
+    .comparison-table tbody td:first-child {
+      font-weight: 500;
+      color: var(--text-heading);
+    }
+
+    .cta-section {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .cta-section p {
+      font-family: var(--font-ui);
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    .cta-button:hover { opacity: 0.88; }
+
+    .related-pages {
+      margin: 3rem 0 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-pages h2 { margin-top: 0; }
+
+    .related-pages ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .related-pages li {
+      margin-bottom: 0.6rem;
+    }
+
+    .related-pages a {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+    }
+
+    .related-pages a:hover { text-decoration: underline; }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.65rem; }
+      h2 { font-size: 1.3rem; }
+      main { padding: 2rem 1rem 3rem; }
+      .comparison-table { font-size: 0.85rem; }
+      .comparison-table thead th,
+      .comparison-table tbody td { padding: 0.6rem 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Notebook</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+  </nav>
+
+  <main>
+    <h1>Notebook vs Obsidian: Simplicity vs Knowledge Graphs</h1>
+    <p class="subtitle">Last updated March 7, 2026</p>
+
+    <p>Obsidian is one of the most impressive note-taking applications ever built. It turns a folder of plain Markdown files into an interconnected knowledge base with bidirectional links, a visual graph view, and an ecosystem of over a thousand community plugins. For researchers, writers, and knowledge workers who want to build a personal wiki, Obsidian is a remarkable tool.</p>
+
+    <p>Notebook is not trying to be Obsidian. It is a browser-based notepad for people who want to open something and start writing immediately — no installation, no configuration, no learning curve. These are fundamentally different tools built for different purposes, and understanding that distinction is the key to choosing between them.</p>
+
+    <p>This is not a competition where one tool is objectively better. Obsidian excels at knowledge management. Notebook excels at frictionless writing. The question is what you actually need.</p>
+
+    <h2>Feature-by-Feature Comparison</h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Notebook</th>
+          <th>Obsidian</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account Required</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>Browser localStorage</td>
+          <td>Local Markdown files</td>
+        </tr>
+        <tr>
+          <td>Platform</td>
+          <td>Any web browser</td>
+          <td>Desktop app (Windows, Mac, Linux) + mobile</td>
+        </tr>
+        <tr>
+          <td>Setup Required</td>
+          <td>Zero — open and write</td>
+          <td>Install app, create vault, configure settings</td>
+        </tr>
+        <tr>
+          <td>Offline Access</td>
+          <td>Full offline support</td>
+          <td>Full offline support</td>
+        </tr>
+        <tr>
+          <td>Editing Format</td>
+          <td>Rich text (WYSIWYG)</td>
+          <td>Markdown (with preview)</td>
+        </tr>
+        <tr>
+          <td>Note Linking</td>
+          <td>No</td>
+          <td>Bidirectional links, backlinks, graph view</td>
+        </tr>
+        <tr>
+          <td>Plugins</td>
+          <td>No</td>
+          <td>1,000+ community plugins</td>
+        </tr>
+        <tr>
+          <td>Learning Curve</td>
+          <td>None</td>
+          <td>Moderate — Markdown, linking syntax, plugin setup</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>Free</td>
+          <td>Free (Sync and Publish are paid add-ons)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Where Notebook Wins</h2>
+
+    <h3>Zero Setup, Instant Start</h3>
+    <p>Open a browser tab and start writing. That is the entire onboarding experience for Notebook. There is no application to download, no vault to create, no folder structure to decide on, no settings to configure. You do not need to understand Markdown syntax or learn about linking conventions. The time between deciding to write something and actually writing it is measured in seconds.</p>
+
+    <p>Obsidian, by comparison, requires you to download and install a desktop application, create a vault (which is a designated folder on your filesystem), and then begin the process of learning its conventions. The initial setup is not difficult, but it is a process. And for someone who just wants to jot something down quickly, that process is a barrier.</p>
+
+    <h3>Works in Any Browser, on Any Device</h3>
+    <p>Notebook runs in Chrome, Firefox, Safari, Edge, or any other modern browser. It works on a borrowed computer, a library terminal, a Chromebook, or a tablet. You do not need to install anything. Obsidian requires its desktop or mobile app to be installed on each device you use. If you are on a machine where you cannot install software — a work computer with restricted permissions, a school Chromebook, a friend's laptop — Obsidian is not available to you.</p>
+
+    <h3>No Learning Curve</h3>
+    <p>Notebook uses rich text editing. Bold text, headers, and lists work like they do in any word processor. Click a button or use a familiar keyboard shortcut. Obsidian uses Markdown, which is a lightweight markup syntax. While Markdown is not hard to learn, it is still something to learn. You need to know that double asterisks mean bold, that hash symbols create headings, and that double brackets create links. For people who are not technical, this is a real barrier. For people who are technical but just want to write prose, it can be an unnecessary layer between thought and text.</p>
+
+    <h3>No Decisions Required</h3>
+    <p>Obsidian's flexibility is both its greatest strength and its greatest source of friction. Before you start writing productively, you face decisions: How should I organize my vault? Should I use folders or tags or both? Which plugins should I install? Should I use a daily notes plugin? What template should I follow? The Obsidian community is wonderful, but the sheer volume of workflow advice, plugin recommendations, and organizational philosophies can lead to spending more time configuring your system than actually writing in it.</p>
+
+    <p>Notebook eliminates all of those decisions. You write a note. You write another note. They go in a list. That is the system.</p>
+
+    <h2>Where Obsidian Wins</h2>
+
+    <h3>Knowledge Management Is Obsidian's Purpose</h3>
+    <p>If you are building a personal knowledge base — connecting ideas, tracking how concepts relate to each other, creating a web of linked thoughts — Obsidian is purpose-built for that. Bidirectional links let you connect notes organically. The graph view gives you a visual map of how your ideas relate. Backlinks show you every note that references the current one. This is not a gimmick; for researchers, students, and writers working with complex material, these connections surface insights that a flat list of notes never could.</p>
+
+    <p>Notebook does not have linking, graph views, or backlinks. It is a flat list of individual notes. If you need to see how ideas connect across hundreds of notes, Notebook will not help you.</p>
+
+    <h3>The Plugin Ecosystem Is Extraordinary</h3>
+    <p>Obsidian's community has built over a thousand plugins that extend the application in nearly every direction imaginable. Kanban boards, calendar views, spaced repetition flashcards, Dataview queries that turn your notes into a database, Excalidraw integration for visual thinking, Templater for automated note creation — the list is vast. For power users, Obsidian can become almost anything: a task manager, a journal, a project tracker, a writing studio. This kind of extensibility is genuinely impressive and completely absent from Notebook.</p>
+
+    <h3>Local File Ownership</h3>
+    <p>Obsidian stores your notes as plain Markdown files in a regular folder on your computer. You can open these files with any text editor, back them up however you want, version them with Git, or process them with scripts. You truly own your data in the most literal sense. Notebook stores data in browser localStorage, which is less transparent and less portable. While Notebook lets you export to JSON and Markdown, Obsidian's approach of using the filesystem directly gives you stronger ownership of your raw data at all times.</p>
+
+    <h3>Mature Mobile Apps</h3>
+    <p>Obsidian has dedicated mobile apps for iOS and Android that provide the full editing experience, including plugins. With Obsidian Sync (a paid service at $4/month) or third-party sync solutions, your vault stays consistent across all your devices. This is a polished, multi-device experience that Notebook — as a browser-based tool with local storage — does not match.</p>
+
+    <h2>Different Tools for Different Needs</h2>
+
+    <p>The most important thing to understand about this comparison is that Notebook and Obsidian are not really competitors. They solve different problems for different people.</p>
+
+    <p>Obsidian is for knowledge management. It is for people who want to build a structured, interconnected repository of ideas over months and years. It rewards investment — the more time you spend learning its features, organizing your vault, and connecting your notes, the more valuable it becomes. Obsidian users tend to be intentional about their note-taking systems. They think about workflows, linking strategies, and information architecture.</p>
+
+    <p>Notebook is for writing. It is for the moment when you need to get words out of your head and onto a screen without any friction. It is for the meeting note, the quick thought, the draft paragraph, the shopping list, the journal entry. It is for people who do not want a system — they want a blank page.</p>
+
+    <p>Some people need both. You might use Obsidian as your long-term knowledge base and Notebook as your quick-capture scratch pad when you are on a shared computer or just want zero friction. There is no rule that says you must choose one tool for all your writing needs.</p>
+
+    <p>If you are drawn to the idea of connected notes, knowledge graphs, and building a personal wiki, go with Obsidian. It is genuinely one of the best tools for that purpose. If you want to open a tab and write something down right now without thinking about any of that, Notebook is here for you.</p>
+
+    <div class="cta-section">
+      <p>Just want to write? Open Notebook in your browser. Nothing to install.</p>
+      <a href="/" class="cta-button">Open Notebook</a>
+    </div>
+
+    <div class="related-pages">
+      <h2>Related Comparisons</h2>
+      <ul>
+        <li><a href="/vs-apple-notes.html">Notebook vs Apple Notes — Cross-Platform Alternative</a></li>
+        <li><a href="/vs-evernote.html">Notebook vs Evernote — Free, Simple Alternative</a></li>
+        <li><a href="/online-notepad.html">Online Notepad — Write in Your Browser</a></li>
+        <li><a href="/memo-app.html">Memo App — Quick Notes, No Account</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    Notebook — A free, private notepad that runs in your browser.
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var html = document.documentElement;
+      var stored = localStorage.getItem('notebook_theme');
+      if (stored) {
+        html.setAttribute('data-theme', stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+      }
+      function updateLabel() {
+        toggle.textContent = html.getAttribute('data-theme') === 'dark' ? 'Light mode' : 'Dark mode';
+      }
+      updateLabel();
+      toggle.addEventListener('click', function() {
+        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('notebook_theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebook vs Simplenote — Private Alternative Without an Account (2026)</title>
+  <meta name="description" content="Notebook vs Simplenote: an honest comparison. Both are minimal note-taking apps, but Notebook is 100% private with no account required while Simplenote syncs across devices via the cloud.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Notebook App">
+  <meta property="og:title" content="Notebook vs Simplenote — Private Alternative Without an Account">
+  <meta property="og:description" content="An honest comparison of Notebook and Simplenote. Both are minimal note-taking apps with different privacy models. See which one fits your workflow.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Notebook">
+  <meta property="og:image" content="https://notebook.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Notebook vs Simplenote — comparison of private note-taking apps">
+  <meta property="og:url" content="https://notebook.app/vs-simplenote.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notebook vs Simplenote — Private Alternative Without an Account">
+  <meta name="twitter:description" content="An honest comparison of Notebook and Simplenote. Both are minimal, but one keeps your notes private by default.">
+  <meta name="twitter:image" content="https://notebook.app/og-image.png">
+  <link rel="canonical" href="https://notebook.app/vs-simplenote.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Notebook vs Simplenote: Privacy Without Compromise",
+    "description": "An honest comparison of Notebook and Simplenote — two minimal note-taking apps with very different privacy models.",
+    "author": {
+      "@type": "Organization",
+      "name": "Notebook App",
+      "url": "https://notebook.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Notebook App",
+      "url": "https://notebook.app"
+    },
+    "datePublished": "2026-03-07",
+    "dateModified": "2026-03-07",
+    "mainEntityOfPage": "https://notebook.app/vs-simplenote.html",
+    "image": "https://notebook.app/og-image.png"
+  }
+  </script>
+  <style>
+    :root, [data-theme="light"] {
+      --bg: #faf8f5;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+    }
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #e0ddd8;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+    }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 17px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-heading);
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.3s;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+    }
+    article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 2.4rem;
+      color: var(--text-heading);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--text-heading);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    p {
+      margin-bottom: 1.25rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    strong {
+      color: var(--text-heading);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .comparison-table thead th {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      text-align: left;
+      padding: 0.75rem 1rem;
+    }
+    .comparison-table thead th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+    .comparison-table thead th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+    .comparison-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .comparison-table tbody tr:last-child td:first-child {
+      border-radius: 0 0 0 8px;
+    }
+    .comparison-table tbody tr:last-child td:last-child {
+      border-radius: 0 0 8px 0;
+    }
+    .comparison-table tbody tr:hover {
+      background: rgba(184, 134, 11, 0.05);
+    }
+    [data-theme="dark"] .comparison-table tbody tr:hover {
+      background: rgba(212, 160, 23, 0.08);
+    }
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: var(--text-heading);
+      white-space: nowrap;
+    }
+    .cta {
+      display: block;
+      text-align: center;
+      margin: 2.5rem auto;
+      padding: 1rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      max-width: 380px;
+      transition: opacity 0.2s;
+    }
+    .cta:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+    .related {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .related h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .related ul {
+      list-style: none;
+      padding: 0;
+    }
+    .related li {
+      margin-bottom: 0.4rem;
+    }
+    .related a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--text-muted);
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      article {
+        padding: 2rem 1rem 2.5rem;
+      }
+      .comparison-table {
+        font-size: 0.85rem;
+      }
+      .comparison-table td,
+      .comparison-table thead th {
+        padding: 0.5rem 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Notebook</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">Light / Dark</button>
+  </nav>
+
+  <article>
+    <h1>Notebook vs Simplenote: Privacy Without Compromise</h1>
+
+    <p>Notebook and Simplenote share a rare quality among note-taking apps: both believe that simplicity is a feature, not a limitation. Neither tries to be a project manager, a wiki, or a second brain. They are both designed for people who want to open an app, write something down, and move on with their day. If you have been searching for a <strong>Simplenote alternative</strong> that respects that philosophy, Notebook is worth a close look.</p>
+
+    <p>The difference between them comes down to a single, fundamental question: where do your notes live? Simplenote stores everything on Automattic's servers and syncs across your devices. Notebook stores everything in your browser's local storage and never sends a byte to any server. That one architectural choice shapes everything else about the two apps, from the sign-up process to what happens when your internet goes out. If you need a <strong>private Simplenote alternative</strong> that works without an account, the comparison below will help you decide.</p>
+
+    <h2>Feature Comparison</h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Notebook</th>
+          <th>Simplenote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account</td>
+          <td>No account needed</td>
+          <td>Required</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>Local (browser)</td>
+          <td>Automattic cloud</td>
+        </tr>
+        <tr>
+          <td>Sync</td>
+          <td>No</td>
+          <td>Yes, cross-device</td>
+        </tr>
+        <tr>
+          <td>Offline</td>
+          <td>Full offline support</td>
+          <td>Partial (needs initial sync)</td>
+        </tr>
+        <tr>
+          <td>Rich Text</td>
+          <td>Yes</td>
+          <td>Markdown only</td>
+        </tr>
+        <tr>
+          <td>Dark Mode</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Organization</td>
+          <td>Pin + drag to reorder</td>
+          <td>Tags</td>
+        </tr>
+        <tr>
+          <td>Export</td>
+          <td>JSON + Markdown</td>
+          <td>Plain text</td>
+        </tr>
+        <tr>
+          <td>Privacy</td>
+          <td>100% local, no telemetry</td>
+          <td>Cloud-stored, Automattic policy</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>Free</td>
+          <td>Free</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Where Notebook Wins</h2>
+
+    <p>The most obvious advantage Notebook holds is <strong>privacy</strong>. Because everything stays in your browser's localStorage, there is no server that can be breached, no privacy policy to parse, and no account credentials to protect. For anyone looking for a <strong>Simplenote offline alternative</strong> that truly works without the internet, Notebook delivers. Once the page loads, every feature works whether you are on a plane, in a basement, or deliberately disconnected.</p>
+
+    <p>Notebook also requires <strong>no account whatsoever</strong>. You open the page and start writing. There is no email verification, no password to remember, and no profile to manage. This makes it ideal for quick capture, temporary notes, or situations where you simply do not want another account in your life.</p>
+
+    <p>On the editing front, Notebook offers a <a href="/">rich text editor</a> with formatting tools built in. Bold, italics, headings, and lists are available from a toolbar, which some users prefer over Simplenote's Markdown-only approach. And when it comes to exporting, Notebook supports both JSON backups and Markdown downloads, giving you more flexibility than Simplenote's plain-text export.</p>
+
+    <h2>Where Simplenote Wins</h2>
+
+    <p>To be straightforward: Simplenote is excellent, and it does several things that Notebook cannot match. The biggest is <strong>cross-device sync</strong>. If you write a note on your phone during a commute and need it on your laptop at work, Simplenote handles that seamlessly. Notebook, by design, keeps your notes on the device where you created them.</p>
+
+    <p>Simplenote's <strong>tagging system</strong> is also genuinely useful for anyone with a large collection of notes. You can filter by tag, combine tags, and organize notes in ways that Notebook's pin-and-reorder system was not designed for. If you maintain hundreds of notes across a dozen categories, Simplenote's organizational tools are stronger.</p>
+
+    <p>Simplenote offers <strong>native apps</strong> for macOS, Windows, Linux, iOS, and Android. This means better system integration, proper push notifications, and performance that a browser-based app cannot always replicate. Additionally, Simplenote's <strong>version history</strong> lets you browse and restore previous versions of any note, a safety net that can save you from accidental deletions or bad edits.</p>
+
+    <h2>The Sync vs Privacy Tradeoff</h2>
+
+    <p>This is the core tension between the two apps, and it is worth stating plainly. Sync and privacy, as implemented today, are fundamentally at odds. To sync notes across devices, your data must travel through a server. That server is controlled by someone else. Even with encryption in transit, your notes exist on Automattic's infrastructure when you use Simplenote.</p>
+
+    <p>Notebook takes the opposite position: your notes never leave your device. The tradeoff is that you cannot access them from another machine unless you manually export and import. There is no middle ground here. You are choosing between convenience and control.</p>
+
+    <p>Neither choice is wrong. If you handle sensitive information, medical notes, journal entries, legal drafts, or anything you would not want on someone else's server, Notebook's local-only approach is the safer default. If your notes are more practical than personal, things like grocery lists, meeting agendas, and quick reminders, Simplenote's sync is genuinely useful and the privacy risk is modest.</p>
+
+    <h2>Who Should Use Which?</h2>
+
+    <p><strong>Choose <a href="/">Notebook</a></strong> if you want a note-taking app that works instantly without creating an account. It is the right choice if you value privacy above all else, if you want your notes to remain entirely on your device, or if you need a reliable <a href="/online-notepad.html">online notepad</a> that works offline without compromise. Notebook is also a good fit if you prefer rich text editing over Markdown, or if you simply want fewer accounts and fewer services in your life.</p>
+
+    <p><strong>Choose Simplenote</strong> if cross-device sync is non-negotiable for your workflow. If you take notes on your phone, edit them on your tablet, and reference them on your desktop, Simplenote is built for exactly that. It is also the better choice if you organize notes heavily with tags, or if version history is important to you. Simplenote is a well-made app backed by a company with a strong track record in open source.</p>
+
+    <p>Both apps share a commitment to minimalism that is increasingly rare. Neither bombards you with features you did not ask for. The question is simply whether your notes should live on your device or in the cloud, and both apps execute their answer well.</p>
+
+    <a href="/" class="cta">Try Notebook — No Account Required</a>
+
+    <div class="related">
+      <h3>Related Comparisons</h3>
+      <ul>
+        <li><a href="/vs-apple-notes.html">Notebook vs Apple Notes</a></li>
+        <li><a href="/vs-google-keep.html">Notebook vs Google Keep</a></li>
+        <li><a href="/online-notepad.html">Free Online Notepad</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">Notebook</a> — A free, private notepad in your browser.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
+    }
+    (function() {
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
+    })();
+  </script>
+</body>
+</html>

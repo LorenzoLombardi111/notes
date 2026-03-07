@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Notepad — Write Notes in Your Browser | No Login</title>
+  <meta name="description" content="Free online notepad with no login required. Write, format, and export notes directly in your browser. Dark mode, rich text, fully private.">
+  <meta name="keywords" content="online notepad, notepad online, free online notepad, free notepad no login, browser notepad, notepad no download">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Notebook App">
+  <meta property="og:title" content="Free Online Notepad — Write Notes in Your Browser | No Login">
+  <meta property="og:description" content="A free online notepad that works right in your browser. No login, no downloads. Rich text editing, dark mode, and total privacy.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Notebook">
+  <meta property="og:url" content="https://notebook.app/online-notepad.html">
+  <meta property="og:image" content="https://notebook.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Notebook — A free online notepad in your browser">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Online Notepad — Write Notes in Your Browser">
+  <meta name="twitter:description" content="A free online notepad that works right in your browser. No login, no downloads. Rich text editing, dark mode, and total privacy.">
+  <meta name="twitter:image" content="https://notebook.app/og-image.png">
+  <link rel="canonical" href="https://notebook.app/online-notepad.html">
+  <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Free Online Notepad — Write Notes in Your Browser",
+    "description": "A free online notepad that works right in your browser. No login, no downloads. Rich text editing, dark mode, and total privacy.",
+    "url": "https://notebook.app/online-notepad.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Notebook",
+      "url": "https://notebook.app"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Notebook — Online Notepad",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://notebook.app"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Online Notepad",
+          "item": "https://notebook.app/online-notepad.html"
+        }
+      ]
+    }
+  }
+  </script>
+  <style>
+    :root, [data-theme="light"] {
+      --bg: #faf8f5;
+      --bg-sidebar: #f3f0eb;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --accent-hover: #a07608;
+      --font-body: 'Lora', serif;
+      --font-heading: 'Playfair Display', serif;
+      --font-ui: 'DM Sans', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --bg-sidebar: #222222;
+      --text: #e0ddd8;
+      --text-muted: #8a8580;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+      --accent-hover: #e0b030;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 17px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+    }
+
+    .brand {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .brand:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-family: var(--font-ui);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+    }
+
+    article {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.3;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-top: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    ul, ol {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    li strong {
+      color: var(--text-heading);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .cta-section {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2.5rem 2rem;
+      background: var(--bg-sidebar);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .cta-section p {
+      font-family: var(--font-ui);
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.85rem 2.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cta-button:hover {
+      background: var(--accent-hover);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    .related-pages {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-pages h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .related-links li {
+      margin-bottom: 0;
+    }
+
+    .related-links a {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .related-links a:hover {
+      border-color: var(--accent);
+      background: var(--bg-sidebar);
+      color: var(--accent);
+    }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    .steps {
+      counter-reset: step-counter;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      counter-increment: step-counter;
+      padding-left: 2.2rem;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .steps li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.15rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 1.2rem 1.25rem;
+      }
+
+      main {
+        padding: 0.75rem 1.25rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.35rem;
+      }
+
+      footer {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="brand">Notebook</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span id="themeIcon">☾</span>
+    </button>
+  </nav>
+
+  <main>
+    <article>
+      <h1>Free Online Notepad — No Login, No Downloads</h1>
+
+      <p class="intro">Sometimes you just need a place to write. Not a project management suite, not a second brain with nested databases — just a clean, quiet space for your thoughts. This <strong>online notepad</strong> gives you exactly that: a distraction-free writing environment that lives entirely in your browser.</p>
+
+      <p>Notebook is a <strong>free online notepad</strong> built for people who value simplicity and privacy. There are no accounts to create, no software to install, and no data leaving your device. Every note you write is stored locally using your browser's built-in storage. You open the page, you start writing. That's it. Whether you're drafting a quick memo, collecting ideas for a project, or keeping a running journal, this <a href="/">notepad online</a> experience is designed to get out of your way and let you focus on what matters — your words.</p>
+
+      <h2>What Makes This Online Notepad Different</h2>
+
+      <p>There are plenty of notepads on the web, but most of them cut corners in ways that add up. Here's what sets Notebook apart:</p>
+
+      <ul>
+        <li><strong>True privacy by design.</strong> Your notes never leave your device. There's no server, no database, no analytics tracking what you write. Everything stays in your browser's local storage — period.</li>
+        <li><strong>No login, no account, no friction.</strong> Most "free" notepads ask for your email before you can type a single word. This <strong>notepad requires no login</strong> — you can start writing the moment the page loads.</li>
+        <li><strong>Rich text editing, not just plain text.</strong> Unlike bare-bones notepads that limit you to unformatted text, Notebook offers bold, italic, headings, lists, and more through a clean formatting toolbar.</li>
+        <li><strong>Works offline.</strong> Once loaded, the app works without an internet connection. Write on a plane, in a cafe with spotty Wi-Fi, or anywhere else — your notes are always accessible.</li>
+        <li><strong>A design that respects your attention.</strong> No ads, no banners, no upsell modals. The interface is warm and minimal, inspired by the feel of writing on quality paper.</li>
+      </ul>
+
+      <h2>Features of This Free Notepad</h2>
+
+      <p>Notebook is simple, but it's not basic. Every feature has been considered carefully to support a smooth writing experience without adding clutter.</p>
+
+      <p><strong>Rich text editing</strong> — Format your notes with bold, italic, underline, strikethrough, headings, bullet lists, numbered lists, and blockquotes. The toolbar appears when you need it and stays out of the way when you don't.</p>
+
+      <p><strong>Multiple notes with organization</strong> — Create as many notes as you need. Pin your most important notes to the top, search across all of them instantly, or drag to reorder them however you like.</p>
+
+      <p><strong>Dark mode</strong> — Switch between a warm light theme and a comfortable dark theme with one click. Your preference is remembered automatically. Whether you write during the day or late at night, the reading experience stays easy on your eyes.</p>
+
+      <p><strong>Export and backup</strong> — Export individual notes as Markdown or back up your entire collection as a JSON file. You can also import notes back in, making it easy to move between devices or create manual backups. Your data is always yours to take with you.</p>
+
+      <p><strong>Font choices</strong> — Pick from a curated selection of typefaces to suit your writing style. Whether you prefer a classic serif or a clean sans-serif, you can customize how your notes feel.</p>
+
+      <p><strong>Keyboard shortcuts</strong> — Power users can navigate and format without touching the mouse. Standard shortcuts for bold, italic, and other formatting work exactly as you'd expect.</p>
+
+      <h2>How to Use This Notepad Online</h2>
+
+      <p>Getting started takes less than five seconds — no exaggeration.</p>
+
+      <ol class="steps">
+        <li><strong>Open the notepad.</strong> Visit the <a href="/">Notebook app</a> in any modern browser — Chrome, Firefox, Safari, or Edge. There's nothing to download and no account to create.</li>
+        <li><strong>Create a new note.</strong> Click the "New Note" button in the sidebar. A fresh note appears instantly, ready for your text.</li>
+        <li><strong>Write and format.</strong> Start typing. Use the formatting toolbar to add headings, bold text, lists, or other structure. The editor saves your work automatically as you type.</li>
+        <li><strong>Organize your notes.</strong> Pin important notes, search by keyword, or drag notes into the order that makes sense to you. Everything updates in real time.</li>
+        <li><strong>Export when you need to.</strong> Click the export option to save a note as Markdown or download all your notes as a JSON backup. You stay in control of your data at every step.</li>
+      </ol>
+
+      <h2>Why Choose a Browser-Based Notepad</h2>
+
+      <p>With so many note-taking apps available, you might wonder why a browser-based approach makes sense. There are several compelling reasons.</p>
+
+      <p><strong>Privacy without compromise.</strong> Cloud-based note apps store your data on someone else's servers. Even with encryption, you're trusting a third party with your thoughts. A local-first online notepad keeps everything on your machine. There's nothing to breach because there's no server to breach. If you've been looking for a <strong>notepad with no login</strong> that genuinely protects your privacy, this is it.</p>
+
+      <p><strong>Speed you can feel.</strong> There's no loading spinner, no syncing delay, no waiting for a server response. Everything happens instantly because everything happens locally. The app loads fast and stays fast — it's one of the lightest <a href="/memo-app.html">memo apps</a> you'll find.</p>
+
+      <p><strong>No installation, no updates.</strong> Desktop apps need to be downloaded, installed, and periodically updated. Browser extensions add complexity. This free notepad runs in a standard browser tab. If your browser works, the notepad works — on any operating system.</p>
+
+      <p><strong>Portability across devices.</strong> Use it on your laptop at work, your tablet at home, or your phone on the go. The interface adapts to any screen size. And if you want to move notes between devices, the export and import features make it straightforward.</p>
+
+      <p>Compared to heavier tools like <a href="/vs-google-keep.html">Google Keep</a>, <a href="/vs-notion.html">Notion</a>, <a href="/vs-evernote.html">Evernote</a>, or <a href="/vs-obsidian.html">Obsidian</a>, a browser-based notepad trades features you might never use for speed and simplicity you'll appreciate every day. If you've tried <a href="/vs-simplenote.html">Simplenote</a> or <a href="/vs-apple-notes.html">Apple Notes</a> but wanted something with zero account overhead, Notebook fills that gap.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Is this online notepad really free?</h3>
+        <p>Yes, completely. Notebook is free to use with no hidden charges, no premium tier, and no ads. There's no catch — it's a genuine free notepad designed to be useful without extracting value from your data or attention.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where are my notes stored?</h3>
+        <p>All notes are stored in your browser's local storage on your own device. Nothing is sent to a server. This means your notes are private by default, but it also means clearing your browser data will remove them — so use the export feature for anything important.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I use this notepad online on my phone?</h3>
+        <p>Absolutely. The interface is fully responsive and works well on phones and tablets. You get the same features — rich text editing, dark mode, search, and export — on any screen size. It functions as a capable mobile notepad without requiring an app download.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happens if I accidentally close the browser?</h3>
+        <p>Your notes persist in local storage, so they'll still be there when you reopen the page. The editor auto-saves as you type — there's no save button to forget. Just open the <a href="/">notepad</a> again and pick up right where you left off.</p>
+      </div>
+
+      <div class="cta-section">
+        <p>Ready to start writing? No signup, no download — just open and go.</p>
+        <a href="/" class="cta-button">Open Notebook — Start Writing</a>
+      </div>
+    </article>
+
+    <section class="related-pages">
+      <h2>Explore More</h2>
+      <ul class="related-links">
+        <li><a href="/memo-app.html">Memo App</a></li>
+        <li><a href="/vs-google-keep.html">Notebook vs Google Keep</a></li>
+        <li><a href="/vs-notion.html">Notebook vs Notion</a></li>
+        <li><a href="/vs-simplenote.html">Notebook vs Simplenote</a></li>
+        <li><a href="/vs-evernote.html">Notebook vs Evernote</a></li>
+        <li><a href="/vs-apple-notes.html">Notebook vs Apple Notes</a></li>
+        <li><a href="/vs-obsidian.html">Notebook vs Obsidian</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="/">Notebook</a> — A free, private notepad in your browser. No login required.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var icon = document.getElementById('themeIcon');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        icon.textContent = theme === 'dark' ? '☀' : '☾';
+        try { localStorage.setItem('notebook_theme', theme); } catch(e) {}
+      }
+
+      function getPreferredTheme() {
+        try {
+          var saved = localStorage.getItem('notebook_theme');
+          if (saved === 'dark' || saved === 'light') return saved;
+        } catch(e) {}
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+
+      setTheme(getPreferredTheme());
+
+      toggle.addEventListener('click', function() {
+        var current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>
