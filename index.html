@@ -661,7 +661,96 @@
     #editor li { margin: 0.15em 0; }
     #editor b, #editor strong { font-weight: 700; }
     #editor i, #editor em { font-style: italic; }
+    #editor s, #editor strike { text-decoration: line-through; color: var(--text-muted); }
+    #editor code {
+      font-family: 'Inconsolata', 'Consolas', 'Monaco', monospace;
+      background: var(--hover);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+    #editor pre {
+      font-family: 'Inconsolata', 'Consolas', 'Monaco', monospace;
+      background: var(--bg-sidebar);
+      padding: 16px;
+      border-radius: var(--radius);
+      font-size: 0.9em;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      margin: 0.5em 0;
+      line-height: 1.5;
+    }
     #editor p { margin: 0.3em 0; }
+
+    /* Markdown editor textarea */
+    #md-editor {
+      font-family: 'Inconsolata', 'Consolas', 'Monaco', monospace;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: transparent;
+      border: none;
+      outline: none;
+      width: 100%;
+      min-height: 300px;
+      resize: none;
+      tab-size: 2;
+    }
+
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-sep { color: var(--border); }
+
+    /* Trash panel */
+    .trash-panel {
+      padding: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .trash-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 4px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      background: var(--hover);
+    }
+    .trash-item-info {
+      min-width: 0;
+      flex: 1;
+    }
+    .trash-item-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--text);
+    }
+    .trash-item-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .trash-item-actions {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+    .trash-empty {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
 
     /* Status Bar */
     #status-bar {
@@ -1032,6 +1121,10 @@
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10V1M3 5l4-4 4 4"/><path d="M1 11v1.5a.5.5 0 00.5.5h11a.5.5 0 00.5-.5V11"/></svg>
           Import
         </button>
+        <button class="btn btn-ghost" id="btn-trash" aria-label="View trash">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 3.5h9M5.5 3.5V2a.5.5 0 01.5-.5h2a.5.5 0 01.5.5v1.5M3.5 3.5l.5 8.5a1 1 0 001 1h4a1 1 0 001-1l.5-8.5"/></svg>
+          Trash
+        </button>
         <button class="btn btn-danger" id="btn-clear-all" aria-label="Delete all notes">Clear All</button>
       </footer>
     </nav>
@@ -1043,11 +1136,26 @@
     <main id="editor-area" role="main">
       <header id="toolbar" role="toolbar" aria-label="Formatting toolbar">
         <div class="toolbar-group">
+          <button class="toolbar-btn" id="btn-undo" aria-label="Undo (Ctrl+Z)" title="Undo (Ctrl+Z)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7a3 3 0 110 6H9"/><path d="M6 4L3 7l3 3"/></svg>
+          </button>
+          <button class="toolbar-btn" id="btn-redo" aria-label="Redo (Ctrl+Y)" title="Redo (Ctrl+Y)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7H6a3 3 0 100 6h1"/><path d="M10 4l3 3-3 3"/></svg>
+          </button>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group">
           <button class="toolbar-btn" id="btn-bold" aria-label="Bold (Ctrl+B)" title="Bold (Ctrl+B)">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2h5a3 3 0 012.08 5.16A3.5 3.5 0 019.5 14H4V2zm2 5h3a1 1 0 000-2H6v2zm0 2v3h3.5a1.5 1.5 0 000-3H6z"/></svg>
           </button>
           <button class="toolbar-btn" id="btn-italic" aria-label="Italic (Ctrl+I)" title="Italic (Ctrl+I)">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6 2h6v2h-2.2l-2.6 8H9v2H3v-2h2.2l2.6-8H6V2z"/></svg>
+          </button>
+          <button class="toolbar-btn" id="btn-strike" aria-label="Strikethrough (Ctrl+Shift+S)" title="Strikethrough (Ctrl+Shift+S)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10v1.5H3z"/><path d="M5.5 3H11v2H7.5c-.8 0-1.5.5-1.5 1.2 0 .5.3.8.7 1H5.1C4.4 6.6 4 5.9 4 5.2 4 3.9 5 3 5.5 3zM8.5 11c.8 0 1.5-.4 1.5-1.1 0-.3-.1-.5-.3-.7h1.7c.2.3.3.6.3.9 0 1.4-1.2 2.4-3.2 2.4-1.3 0-2.5-.5-3-1.2l1.2-1c.4.4 1.1.7 1.8.7z"/></svg>
+          </button>
+          <button class="toolbar-btn" id="btn-code" aria-label="Inline code" title="Inline code">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 4 1 8 5 12"/><polyline points="11 4 15 8 11 12"/><line x1="9" y1="2" x2="7" y2="14"/></svg>
           </button>
         </div>
         <div class="toolbar-divider"></div>
@@ -1075,6 +1183,9 @@
         </div>
         <div class="toolbar-spacer"></div>
         <div class="toolbar-group">
+          <button class="toolbar-btn" id="btn-md-toggle" aria-label="Toggle Markdown mode" title="Toggle Markdown mode">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1 3h14v10H1V3zm1 1v8h12V4H2zm1 1.5h2l1.5 2 1.5-2h2v5H8V7.5l-1.5 2-1.5-2V9.5H3v-5zm8 0h2l-1.5 2.5H13v1h-1.5l1.5 2.5h-2l-1.5-2.5V5.5z"/></svg>
+          </button>
           <button class="toolbar-btn" id="btn-download-md" aria-label="Download as Markdown" title="Download as Markdown">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9M4 7l4 4 4-4"/><path d="M2 12v2h12v-2"/></svg>
           </button>
@@ -1084,11 +1195,16 @@
       <div id="editor-scroll">
         <div id="editor-wrapper">
           <article id="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Note editor" spellcheck="true"></article>
+          <textarea id="md-editor" aria-label="Markdown editor" spellcheck="true" style="display:none"></textarea>
         </div>
       </div>
 
       <footer id="status-bar">
-        <span id="word-count">0 words</span>
+        <div class="status-left">
+          <span id="word-count">0 words</span>
+          <span class="status-sep">·</span>
+          <span id="char-count">0 chars</span>
+        </div>
         <span id="last-edited"></span>
       </footer>
 
@@ -1134,7 +1250,8 @@
       order: 'notebook_order',
       theme: 'notebook_theme',
       font: 'notebook_font',
-      active: 'notebook_active'
+      active: 'notebook_active',
+      trash: 'notebook_trash'
     };
 
     // ===== State =====
@@ -1144,6 +1261,8 @@
     let searchQuery = '';
     let saveTimer = null;
     let dialogResolver = null;
+    let trash = [];
+    let markdownMode = false;
 
     // ===== DOM References =====
     const $ = id => document.getElementById(id);
@@ -1162,6 +1281,9 @@
     const noResults = $('no-results');
     const srAnnouncer = $('sr-announcer');
     const dialogOverlay = $('dialog-overlay');
+    const charCountEl = $('char-count');
+    const mdEditor = $('md-editor');
+    const mdToggleBtn = $('btn-md-toggle');
 
     // ===== Announce to screen readers =====
     function announce(msg) {
@@ -1223,6 +1345,12 @@
         editor.style.fontFamily = savedFont;
         fontPicker.value = savedFont;
       }
+
+      // Trash — load and purge items older than 30 days
+      trash = loadJSON(KEYS.trash, []);
+      const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
+      trash = trash.filter(t => new Date(t.deletedAt).getTime() > thirtyDaysAgo);
+      saveJSON(KEYS.trash, trash);
     }
 
     function saveNotes() {
@@ -1261,6 +1389,10 @@
       const text = stripHTML(html).trim();
       if (!text) return 0;
       return text.split(/\s+/).length;
+    }
+
+    function countChars(html) {
+      return stripHTML(html).length;
     }
 
     function formatTime(iso) {
@@ -1448,23 +1580,39 @@
 
       // Save current content first
       if (activeNoteId && notes[activeNoteId]) {
-        notes[activeNoteId].content = editor.innerHTML;
+        if (markdownMode) {
+          notes[activeNoteId].content = markdownToHTML(mdEditor.value);
+        } else {
+          notes[activeNoteId].content = editor.innerHTML;
+        }
         notes[activeNoteId].updatedAt = new Date().toISOString();
       }
 
       activeNoteId = id;
       saveActiveId();
-      editor.innerHTML = notes[id].content;
+
+      if (markdownMode) {
+        mdEditor.value = htmlToMarkdown(notes[id].content);
+        mdEditor.style.height = 'auto';
+        mdEditor.style.height = Math.max(300, mdEditor.scrollHeight) + 'px';
+      } else {
+        editor.innerHTML = notes[id].content;
+      }
+
       updateStatusBar();
       renderNoteList();
 
       requestAnimationFrame(() => {
-        editor.focus();
-        // Place cursor at end
-        const sel = window.getSelection();
-        if (editor.childNodes.length > 0) {
-          sel.selectAllChildren(editor);
-          sel.collapseToEnd();
+        if (markdownMode) {
+          mdEditor.focus();
+          mdEditor.setSelectionRange(mdEditor.value.length, mdEditor.value.length);
+        } else {
+          editor.focus();
+          const sel = window.getSelection();
+          if (editor.childNodes.length > 0) {
+            sel.selectAllChildren(editor);
+            sel.collapseToEnd();
+          }
         }
       });
     }
@@ -1473,7 +1621,7 @@
       const title = getTitle(notes[id]);
       const confirmed = await showDialog(
         'Delete Note',
-        `Are you sure you want to delete "${title}"? This cannot be undone.`,
+        `Are you sure you want to delete "${title}"? It will be moved to Trash for 30 days.`,
         'Delete'
       );
       if (!confirmed) return;
@@ -1485,13 +1633,17 @@
         await new Promise(r => setTimeout(r, 240));
       }
 
+      // Move to trash
+      const note = notes[id];
+      trash.push({ ...note, deletedAt: new Date().toISOString() });
+      saveJSON(KEYS.trash, trash);
+
       const idx = noteOrder.indexOf(id);
       delete notes[id];
       noteOrder = noteOrder.filter(oid => oid !== id);
       saveNotes();
 
       if (activeNoteId === id) {
-        // Select adjacent note
         const remaining = noteOrder;
         if (remaining.length > 0) {
           const newIdx = Math.min(idx, remaining.length - 1);
@@ -1504,7 +1656,75 @@
       }
 
       renderNoteList();
-      announce(`Note "${title}" deleted`);
+      announce(`Note "${title}" moved to trash`);
+    }
+
+    // ===== Trash Operations =====
+    function restoreFromTrash(trashIdx) {
+      const item = trash[trashIdx];
+      if (!item) return;
+      const { deletedAt, ...note } = item;
+      notes[note.id] = note;
+      noteOrder.unshift(note.id);
+      trash.splice(trashIdx, 1);
+      saveJSON(KEYS.trash, trash);
+      saveNotes();
+      selectNote(note.id);
+      renderNoteList();
+      announce('Note restored from trash');
+    }
+
+    function permanentlyDelete(trashIdx) {
+      trash.splice(trashIdx, 1);
+      saveJSON(KEYS.trash, trash);
+      announce('Note permanently deleted');
+    }
+
+    function emptyTrash() {
+      trash = [];
+      saveJSON(KEYS.trash, trash);
+      announce('Trash emptied');
+    }
+
+    async function showTrash() {
+      // Purge expired
+      const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
+      trash = trash.filter(t => new Date(t.deletedAt).getTime() > thirtyDaysAgo);
+      saveJSON(KEYS.trash, trash);
+
+      let trashHTML = '';
+      if (trash.length === 0) {
+        trashHTML = '<div class="trash-empty">Trash is empty</div>';
+      } else {
+        trashHTML = '<div class="trash-panel">';
+        trash.forEach((item, i) => {
+          const daysLeft = Math.ceil((new Date(item.deletedAt).getTime() + 30*24*60*60*1000 - Date.now()) / (24*60*60*1000));
+          trashHTML += `
+            <div class="trash-item" data-trash-idx="${i}">
+              <div class="trash-item-info">
+                <div class="trash-item-title">${escapeHTML(getTitle(item))}</div>
+                <div class="trash-item-meta">${daysLeft} day${daysLeft !== 1 ? 's' : ''} left</div>
+              </div>
+              <div class="trash-item-actions">
+                <button class="btn btn-ghost trash-restore-btn" data-idx="${i}" style="padding:4px 8px;font-size:0.75rem">Restore</button>
+                <button class="btn btn-danger trash-delete-btn" data-idx="${i}" style="padding:4px 8px;font-size:0.75rem">Delete</button>
+              </div>
+            </div>`;
+        });
+        trashHTML += '</div>';
+      }
+
+      const hasTrash = trash.length > 0;
+      const confirmed = await showDialog(
+        `Trash (${trash.length})`,
+        hasTrash ? 'Deleted notes are kept for 30 days.' : '',
+        hasTrash ? 'Empty Trash' : 'OK',
+        trashHTML
+      );
+
+      if (confirmed && hasTrash) {
+        emptyTrash();
+      }
     }
 
     function togglePin(id) {
@@ -1559,12 +1779,15 @@
     function updateStatusBar() {
       if (!activeNoteId || !notes[activeNoteId]) {
         wordCountEl.textContent = '';
+        charCountEl.textContent = '';
         lastEditedEl.textContent = '';
         return;
       }
       const n = notes[activeNoteId];
       const wc = countWords(n.content);
+      const cc = countChars(n.content);
       wordCountEl.textContent = `${wc} word${wc !== 1 ? 's' : ''}`;
+      charCountEl.textContent = `${cc} char${cc !== 1 ? 's' : ''}`;
       lastEditedEl.textContent = n.updatedAt ? 'Edited ' + formatTime(n.updatedAt) : '';
     }
 
@@ -1577,8 +1800,40 @@
       editor.focus();
     }
 
+    $('btn-undo').addEventListener('click', () => execCmd('undo'));
+    $('btn-redo').addEventListener('click', () => execCmd('redo'));
     $('btn-bold').addEventListener('click', () => execCmd('bold'));
     $('btn-italic').addEventListener('click', () => execCmd('italic'));
+    $('btn-strike').addEventListener('click', () => execCmd('strikeThrough'));
+    $('btn-code').addEventListener('click', () => {
+      const sel = window.getSelection();
+      if (!sel.rangeCount) return;
+      const range = sel.getRangeAt(0);
+      const selectedText = range.toString();
+      if (!selectedText) return;
+
+      // Check if already in a code tag
+      const parentCode = sel.anchorNode?.parentElement?.closest?.('code');
+      if (parentCode) {
+        // Unwrap: replace <code> with its text content
+        const textNode = document.createTextNode(parentCode.textContent);
+        parentCode.parentNode.replaceChild(textNode, parentCode);
+        const newRange = document.createRange();
+        newRange.selectNodeContents(textNode);
+        sel.removeAllRanges();
+        sel.addRange(newRange);
+      } else {
+        // Wrap selection in <code>
+        const code = document.createElement('code');
+        range.surroundContents(code);
+        sel.removeAllRanges();
+        const newRange = document.createRange();
+        newRange.selectNodeContents(code);
+        sel.addRange(newRange);
+      }
+      editor.focus();
+      debouncedSave();
+    });
     $('btn-heading').addEventListener('click', () => {
       // Cycle through heading levels
       const sel = window.getSelection();
@@ -1605,6 +1860,9 @@
       } else if (mod && e.key === 'i') {
         e.preventDefault();
         execCmd('italic');
+      } else if (mod && e.shiftKey && (e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+        execCmd('strikeThrough');
       } else if (mod && e.key === 'n' && !e.shiftKey) {
         e.preventDefault();
         createNote();
@@ -1686,6 +1944,36 @@
     // ===== New Note Buttons =====
     $('btn-new-note').addEventListener('click', createNote);
     $('btn-empty-new-note').addEventListener('click', createNote);
+
+    // ===== Trash =====
+    $('btn-trash').addEventListener('click', showTrash);
+
+    // Trash restore/delete delegation
+    dialogOverlay.addEventListener('click', e => {
+      const restoreBtn = e.target.closest('.trash-restore-btn');
+      if (restoreBtn) {
+        e.stopPropagation();
+        const idx = parseInt(restoreBtn.dataset.idx);
+        restoreFromTrash(idx);
+        closeDialog(false);
+        return;
+      }
+      const deleteBtn = e.target.closest('.trash-delete-btn');
+      if (deleteBtn) {
+        e.stopPropagation();
+        const idx = parseInt(deleteBtn.dataset.idx);
+        permanentlyDelete(idx);
+        deleteBtn.closest('.trash-item').remove();
+        // Update title count
+        const title = dialogOverlay.querySelector('#dialog-title');
+        if (title) title.textContent = `Trash (${trash.length})`;
+        if (trash.length === 0) {
+          const panel = dialogOverlay.querySelector('.trash-panel');
+          if (panel) panel.outerHTML = '<div class="trash-empty">Trash is empty</div>';
+        }
+        return;
+      }
+    });
 
     // ===== Clear All =====
     $('btn-clear-all').addEventListener('click', clearAllNotes);
@@ -1813,6 +2101,9 @@
               case 'h3': result += '### ' + inner + '\n\n'; break;
               case 'b': case 'strong': result += '**' + inner + '**'; break;
               case 'i': case 'em': result += '*' + inner + '*'; break;
+              case 's': case 'strike': result += '~~' + inner + '~~'; break;
+              case 'code': result += '`' + inner + '`'; break;
+              case 'pre': result += '\n```\n' + child.textContent + '\n```\n'; break;
               case 'ul': result += inner + '\n'; break;
               case 'ol': {
                 let idx = 0;
@@ -1996,6 +2287,105 @@
       item.addEventListener('touchend', cancel, { once: true });
       item.addEventListener('touchmove', cancelMove);
     }, { passive: true });
+
+    // ===== Markdown Mode =====
+    function markdownToHTML(md) {
+      let html = md
+        // Headings
+        .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+        .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+        // Bold + italic
+        .replace(/\*\*\*(.+?)\*\*\*/g, '<b><i>$1</i></b>')
+        // Bold
+        .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+        // Italic
+        .replace(/\*(.+?)\*/g, '<i>$1</i>')
+        // Strikethrough
+        .replace(/~~(.+?)~~/g, '<s>$1</s>')
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        // Unordered lists
+        .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
+        // Ordered lists
+        .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+        // Horizontal rules
+        .replace(/^---$/gm, '<hr>')
+        // Line breaks to paragraphs
+        .replace(/\n\n+/g, '</p><p>')
+        .replace(/\n/g, '<br>');
+
+      // Wrap list items
+      html = html.replace(/(<li>.*?<\/li>(\s*<br>)*)+/g, match => '<ul>' + match.replace(/<br>/g, '') + '</ul>');
+
+      return '<p>' + html + '</p>';
+    }
+
+    function toggleMarkdownMode() {
+      markdownMode = !markdownMode;
+      mdToggleBtn.classList.toggle('active', markdownMode);
+
+      if (!activeNoteId || !notes[activeNoteId]) return;
+
+      if (markdownMode) {
+        // Switch to markdown: convert HTML → markdown text
+        const md = htmlToMarkdown(notes[activeNoteId].content);
+        mdEditor.value = md;
+        editor.style.display = 'none';
+        mdEditor.style.display = 'block';
+        // Disable formatting buttons in MD mode
+        document.querySelectorAll('#toolbar .toolbar-btn:not(#btn-md-toggle):not(#btn-download-md):not(#btn-undo):not(#btn-redo)').forEach(b => {
+          b.disabled = true;
+          b.style.opacity = '0.3';
+        });
+        fontPicker.disabled = true;
+        fontPicker.style.opacity = '0.3';
+        mdEditor.focus();
+        // Auto-resize
+        mdEditor.style.height = 'auto';
+        mdEditor.style.height = Math.max(300, mdEditor.scrollHeight) + 'px';
+      } else {
+        // Switch back to rich text: convert markdown → HTML
+        const html = markdownToHTML(mdEditor.value);
+        notes[activeNoteId].content = html;
+        editor.innerHTML = html;
+        editor.style.display = 'block';
+        mdEditor.style.display = 'none';
+        // Re-enable formatting buttons
+        document.querySelectorAll('#toolbar .toolbar-btn:not(#btn-md-toggle):not(#btn-download-md):not(#btn-undo):not(#btn-redo)').forEach(b => {
+          b.disabled = false;
+          b.style.opacity = '';
+        });
+        fontPicker.disabled = false;
+        fontPicker.style.opacity = '';
+        saveNotes();
+        editor.focus();
+      }
+
+      announce(markdownMode ? 'Markdown mode enabled' : 'Rich text mode enabled');
+    }
+
+    mdToggleBtn.addEventListener('click', toggleMarkdownMode);
+
+    // Auto-save for markdown editor
+    mdEditor.addEventListener('input', () => {
+      if (!activeNoteId || !notes[activeNoteId]) return;
+      // Auto-resize
+      mdEditor.style.height = 'auto';
+      mdEditor.style.height = Math.max(300, mdEditor.scrollHeight) + 'px';
+      // Save raw markdown as HTML for consistency
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        const html = markdownToHTML(mdEditor.value);
+        notes[activeNoteId].content = html;
+        notes[activeNoteId].updatedAt = new Date().toISOString();
+        saveNotes();
+        updateStatusBar();
+        // Update title in sidebar
+        const el = noteList.querySelector(`[data-id="${activeNoteId}"] .note-title`);
+        if (el) el.textContent = getTitle(notes[activeNoteId]);
+      }, 300);
+    });
 
     // ===== Init =====
     function init() {
