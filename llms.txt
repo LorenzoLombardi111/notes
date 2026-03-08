@@ -15,7 +15,7 @@
 - 6 font choices (Lora, Playfair Display, Merriweather, EB Garamond, Inconsolata, DM Sans)
 - Pin, search, drag-and-drop reorder notes
 - Trash with 30-day retention
-- Keyboard shortcuts (Ctrl+B, Ctrl+I, Ctrl+N)
+- Keyboard shortcuts (Ctrl+B, Ctrl+I, Alt+N)
 - Fully responsive, mobile-friendly
 - Single HTML file, no external dependencies beyond Google Fonts
 - Accessible (ARIA roles, keyboard navigation, screen reader announcements)

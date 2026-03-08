@@ -1,8 +1,20 @@
-const CACHE_NAME = 'freenotepad-v1';
+const CACHE_NAME = 'freenotepad-v2';
 const ASSETS = [
   '/',
   '/index.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/online-notepad.html',
+  '/memo-app.html',
+  '/note-taking-tips.html',
+  '/privacy-notes-app.html',
+  '/offline-notepad.html',
+  '/vs-google-keep.html',
+  '/vs-notion.html',
+  '/vs-simplenote.html',
+  '/vs-apple-notes.html',
+  '/vs-evernote.html',
+  '/vs-obsidian.html',
+  '/og-image.svg'
 ];
 
 self.addEventListener('install', event => {

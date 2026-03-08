@@ -108,7 +108,7 @@ Choose from 6 carefully curated typeface families: Lora, Playfair Display, Merri
 
 freenotepad.app is a single HTML file with no external dependencies beyond Google Fonts. Everything — the interface, logic, and storage — runs in your browser. freenotepad.app saves notes to **localStorage**, which means they persist between sessions but stay entirely on your device. localStorage is supported in Chrome 4+, Firefox 3.5+, Safari 4+, and Edge 12+, covering over 99% of active browsers worldwide.
 
-**Create a note or memo** — Click "New Note" or press Ctrl+N (Cmd+N on Mac)
+**Create a note or memo** — Click "New Note" or press Alt+N
 
 - **Write and format** — Use the toolbar or keyboard shortcuts for bold, italic, headings, and lists
 
@@ -130,7 +130,7 @@ freenotepad.app works as an **online memo** pad for work, a private journal, a s
 
 - **Ctrl+I** (Cmd+I on Mac) — Italicize selected text
 
-- **Ctrl+N** (Cmd+N on Mac) — Create a new note
+- **Alt+N** (Alt+N on Mac) — Create a new note
 
 - **Arrow keys** — Navigate between notes in the sidebar
 
@@ -206,7 +206,7 @@ Yes, freenotepad.app is completely free with no ads, no premium tiers, and no hi
 
 ### What keyboard shortcuts does freenotepad.app support?
 
-freenotepad.app supports Ctrl+B (or Cmd+B) for bold, Ctrl+I (or Cmd+I) for italic, and Ctrl+N (or Cmd+N) to create a new note. The formatting toolbar also provides buttons for headings, bulleted lists, and numbered lists.
+freenotepad.app supports Ctrl+B (or Cmd+B) for bold, Ctrl+I (or Cmd+I) for italic, and Alt+N (or Alt+N) to create a new note. The formatting toolbar also provides buttons for headings, bulleted lists, and numbered lists.
 
 ### Will I lose my notes if I clear my browser data?
 
@@ -410,7 +410,7 @@ Because freenotepad.app is a single-page application with no server round-trips,
 
 freenotepad.app packs a thoughtful set of features into a lightweight package. Everything you need for productive memo-taking is here, without the bloat that slows down larger applications.
 
-- **Quick note creation** — Hit the new-note button or press Ctrl+N and start typing immediately. Each memo gets a timestamp and auto-saves as you write, so you never lose a thought.
+- **Quick note creation** — Hit the new-note button or press Alt+N and start typing immediately. Each memo gets a timestamp and auto-saves as you write, so you never lose a thought.
 
 - **Pin important memos** — Pin your most-referenced memos to the top of the list. Pinned notes stay visible regardless of how many new notes you add below them.
 
@@ -430,7 +430,7 @@ Getting started with this **memo pad online** takes about ten seconds. Here is t
 
 - **Open freenotepad.app** — Visit [the app](/) in any modern browser. There is no sign-up form and nothing to install. The editor loads instantly.
 
-- **Create your first memo** — Click the "New Note" button in the sidebar or press Ctrl+N. A blank memo appears in the editor, ready for your text.
+- **Create your first memo** — Click the "New Note" button in the sidebar or press Alt+N. A blank memo appears in the editor, ready for your text.
 
 - **Write and format** — Type your memo in the editor area. Use the formatting toolbar for headings, bold, italic, and lists. Everything auto-saves to your browser's local storage in real time.
 
