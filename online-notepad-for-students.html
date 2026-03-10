@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Notepad for Students — Free, Private, No Login | freenotepad.app</title>
+  <meta name="description" content="A free online notepad built for students. Take lecture notes, organize study sessions, and draft research — no login, no cloud, fully private.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="freenotepad.app">
+  <meta property="og:title" content="Online Notepad for Students — Free, Private, No Login | freenotepad.app">
+  <meta property="og:description" content="A free online notepad for students. Capture lecture notes, study plans, and research drafts privately in your browser — no account required.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="freenotepad.app">
+  <meta property="og:image" content="https://freenotepad.app/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Online Notepad for Students — freenotepad.app">
+  <meta property="og:url" content="https://freenotepad.app/online-notepad-for-students.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Online Notepad for Students — Free, Private, No Login | freenotepad.app">
+  <meta name="twitter:description" content="A free online notepad for students. Capture lecture notes, study plans, and research drafts — no login, no cloud.">
+  <meta name="twitter:image" content="https://freenotepad.app/og-image.svg">
+  <link rel="canonical" href="https://freenotepad.app/online-notepad-for-students.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "freenotepad.app",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any",
+    "url": "https://freenotepad.app",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is freenotepad.app good for students?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. freenotepad.app is ideal for students because it loads instantly in any browser, requires no account or installation, and saves notes automatically to your device. You can organize lecture notes, study guides, and research drafts in separate notes, pin important ones, and export everything as Markdown or JSON."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use freenotepad.app during exams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "freenotepad.app works fully offline once loaded, so it does not require internet access during use. Whether you can use it during an exam depends entirely on your institution's exam policies. Because it stores notes locally and has no cloud connection, it may be permitted in open-book or open-laptop exam settings — but always check with your instructor first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I lose my notes if I close the browser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Your notes are saved automatically in your browser's localStorage, so they persist even after you close the tab or restart your computer. However, clearing your browser data will remove them. We recommend exporting your notes regularly as a JSON backup so you can restore them anytime."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #faf8f5;
+      --bg-sidebar: #f3f0eb;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --accent-light: #daa52033;
+      --accent-hover: #996f09;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --font-body: 'Lora', 'Georgia', serif;
+      --font-heading: 'Playfair Display', 'Georgia', serif;
+      --font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --transition: 0.2s ease;
+      --radius: 8px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --bg-sidebar: #212121;
+      --text: #e0ddd8;
+      --text-muted: #8a8580;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+      --accent-light: #d4a01730;
+      --accent-hover: #e6b422;
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    html { height: 100%; }
+    body {
+      min-height: 100%;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    .brand {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-decoration: none;
+    }
+    .brand:hover { color: var(--accent); }
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .article-meta {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin: 40px 0 16px;
+      line-height: 1.3;
+    }
+    p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--accent-hover); }
+
+    .cta-box {
+      text-align: center;
+      margin: 48px 0 40px;
+      padding: 40px 24px;
+      background: var(--bg-sidebar);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .cta-box h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .cta-box p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .cta-button:hover {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+
+    .related {
+      margin: 40px 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .related h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--text-heading);
+      margin-bottom: 16px;
+    }
+    .related ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related li a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--bg-sidebar);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: var(--transition);
+    }
+    .related li a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.25rem; }
+      p { font-size: 1rem; }
+      .cta-box { padding: 28px 16px; }
+      .related ul { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="brand">freenotepad.app</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+  </nav>
+
+  <article>
+    <nav style="font-family:var(--font-ui,'DM Sans',sans-serif);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;"><a href="/" style="color:var(--accent);">Home</a> &rsaquo; Online Notepad for Students</nav>
+    <h1>Online Notepad for Students: Free, Private, No Login Required</h1>
+    <p class="article-meta">Updated March 10, 2026</p>
+
+    <h2>Who is this for?</h2>
+    <p>
+      This page is for students at every level — high school, undergraduate, graduate, and beyond — who need a fast, reliable place to write things down without the friction of creating accounts or installing software. Whether you are sitting in a lecture hall, studying at the library, or working from a shared computer in a campus lab, <a href="/">freenotepad.app</a> gives you a private notepad that opens instantly and never asks for your personal information.
+    </p>
+
+    <h2>How students use a quick browser notepad</h2>
+
+    <p>
+      <strong>Capturing lecture notes on the fly.</strong> The middle of a lecture is not the time to fumble with login screens or wait for an app to sync. freenotepad.app loads in under a second and starts saving the moment you type. You can create a new note for each class session, use headings and bullet points to structure your thoughts, and bold key terms as the professor introduces them. Because everything is stored locally in your browser, there is no lag and no risk of losing work to a dropped Wi-Fi connection. When the lecture ends, your notes are already saved.
+    </p>
+    <p>
+      <strong>Organizing study sessions.</strong> Effective studying often means consolidating information from different sources into a single, clear outline. With freenotepad.app, you can create separate notes for each subject or topic, pin the ones you are actively reviewing to the top of the sidebar, and search across all your notes instantly. The distraction-free interface keeps you focused on the material instead of fighting with a cluttered app. When you finish a study session, you can export your notes as Markdown files that are easy to share with classmates or convert into flashcards.
+    </p>
+    <p>
+      <strong>Drafting research and essays.</strong> The early stages of writing — brainstorming thesis statements, outlining arguments, collecting quotes — benefit from a tool that stays out of your way. freenotepad.app gives you a clean text editor with just enough formatting to organize your thoughts: headings for sections, lists for supporting points, bold and italic for emphasis. There are no templates, no pop-ups, and no AI suggestions interrupting your train of thought. When your draft is ready to move into a word processor, export it as Markdown and paste it directly into Google Docs, Word, or whatever your program requires.
+    </p>
+    <p>
+      <strong>Exam prep and review sheets.</strong> Building a condensed review sheet before an exam is one of the most effective study strategies. freenotepad.app lets you pull together key concepts, formulas, and definitions into a single note that you can revisit offline — on the bus, in the hallway, or anywhere you have your laptop. Since the app works without an internet connection after the initial load, you are never dependent on campus Wi-Fi to access your review materials.
+    </p>
+    <p>
+      <strong>Group project coordination.</strong> When you are collaborating on a group project, you often need a personal scratchpad for your own to-do items, meeting notes, and draft contributions before sharing them with the team. freenotepad.app serves this role perfectly. Jot down action items during group meetings, draft your section of the report, or keep a running list of questions for the next session. Nothing is shared unless you explicitly export and send it, so your rough drafts and personal reminders stay private.
+    </p>
+
+    <div class="cta-box">
+      <h2>Start Taking Notes — No Sign-Up Needed</h2>
+      <p>Open freenotepad.app and begin writing in seconds. Free, private, and works offline.</p>
+      <a href="/" class="cta-button">Open freenotepad.app</a>
+    </div>
+
+    <div class="related">
+      <h3>More from freenotepad.app</h3>
+      <ul>
+        <li><a href="/online-notepad-for-teachers.html">Notepad for Teachers</a></li>
+        <li><a href="/online-notepad-for-writers.html">Notepad for Writers</a></li>
+        <li><a href="/online-notepad-for-developers.html">Notepad for Developers</a></li>
+        <li><a href="/online-notepad.html">Free Online Notepad</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>
+    <p><a href="/">freenotepad.app</a> — A free, private notepad in your browser.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var html = document.documentElement;
+      var stored = localStorage.getItem('notebook_theme');
+      if (stored) {
+        html.setAttribute('data-theme', stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+      }
+      function updateLabel() {
+        var current = html.getAttribute('data-theme');
+        toggle.textContent = current === 'dark' ? 'Light mode' : 'Dark mode';
+      }
+      updateLabel();
+      toggle.addEventListener('click', function() {
+        var current = html.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('notebook_theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
+
+</body>
+</html>

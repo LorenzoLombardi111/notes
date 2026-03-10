@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Notepad for Writers — Distraction-Free, Private Writing | freenotepad.app</title>
+  <meta name="description" content="A distraction-free online notepad for writers. Draft, journal, and write privately in your browser — no login, no cloud, Markdown export. Start writing now.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="freenotepad.app">
+  <meta property="og:title" content="Online Notepad for Writers — Distraction-Free, Private Writing | freenotepad.app">
+  <meta property="og:description" content="A distraction-free online notepad for writers. Draft stories, journal entries, and essays privately in your browser — no account required.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="freenotepad.app">
+  <meta property="og:image" content="https://freenotepad.app/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Online Notepad for Writers — freenotepad.app">
+  <meta property="og:url" content="https://freenotepad.app/online-notepad-for-writers.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Online Notepad for Writers — Distraction-Free, Private Writing | freenotepad.app">
+  <meta name="twitter:description" content="A distraction-free online notepad for writers. Draft, journal, and write privately — no login, no cloud.">
+  <meta name="twitter:image" content="https://freenotepad.app/og-image.svg">
+  <link rel="canonical" href="https://freenotepad.app/online-notepad-for-writers.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "freenotepad.app",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any",
+    "url": "https://freenotepad.app",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is freenotepad.app good for creative writing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. freenotepad.app provides a clean, distraction-free writing environment with just enough formatting — bold, italic, headings, and lists — to structure your work without cluttering the interface. There are no pop-ups, no social features, and no AI suggestions. It is designed to let you focus entirely on your words. Many writers use it for first drafts, journaling, and free writing sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export my writing as Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. freenotepad.app lets you export individual notes as Markdown (.md) files, which are compatible with virtually every writing tool, static site generator, and publishing platform. You can also export all notes as a JSON backup. This makes it easy to start a draft in freenotepad.app and move it into your preferred editor or publishing workflow when it is ready."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my journal entries private on freenotepad.app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completely. freenotepad.app stores all notes in your browser's localStorage and never sends anything to a server. There is no account, no cloud storage, and no analytics tracking what you write. Your journal entries, personal reflections, and drafts stay on your device and are visible only to you."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #faf8f5;
+      --bg-sidebar: #f3f0eb;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --accent-light: #daa52033;
+      --accent-hover: #996f09;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --font-body: 'Lora', 'Georgia', serif;
+      --font-heading: 'Playfair Display', 'Georgia', serif;
+      --font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --transition: 0.2s ease;
+      --radius: 8px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --bg-sidebar: #212121;
+      --text: #e0ddd8;
+      --text-muted: #8a8580;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+      --accent-light: #d4a01730;
+      --accent-hover: #e6b422;
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    html { height: 100%; }
+    body {
+      min-height: 100%;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    .brand {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-decoration: none;
+    }
+    .brand:hover { color: var(--accent); }
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .article-meta {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin: 40px 0 16px;
+      line-height: 1.3;
+    }
+    p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--accent-hover); }
+
+    .cta-box {
+      text-align: center;
+      margin: 48px 0 40px;
+      padding: 40px 24px;
+      background: var(--bg-sidebar);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .cta-box h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .cta-box p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .cta-button:hover {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+
+    .related {
+      margin: 40px 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .related h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--text-heading);
+      margin-bottom: 16px;
+    }
+    .related ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related li a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--bg-sidebar);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: var(--transition);
+    }
+    .related li a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.25rem; }
+      p { font-size: 1rem; }
+      .cta-box { padding: 28px 16px; }
+      .related ul { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="brand">freenotepad.app</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+  </nav>
+
+  <article>
+    <nav style="font-family:var(--font-ui,'DM Sans',sans-serif);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;"><a href="/" style="color:var(--accent);">Home</a> &rsaquo; Online Notepad for Writers</nav>
+    <h1>Online Notepad for Writers: Distraction-Free, Private Writing</h1>
+    <p class="article-meta">Updated March 10, 2026</p>
+
+    <h2>Who is this for?</h2>
+    <p>
+      This page is for writers of all kinds — novelists, journalists, bloggers, essayists, poets, and anyone who puts words on a page as part of their craft or daily practice. If you want a writing space that opens instantly, never interrupts you, and keeps your drafts completely private, <a href="/">freenotepad.app</a> offers exactly that. No account creation, no subscription, no cloud storage watching over your shoulder.
+    </p>
+
+    <h2>How writers use a quick browser notepad</h2>
+
+    <p>
+      <strong>First drafts without friction.</strong> The hardest part of writing is often getting started. The last thing you need when inspiration strikes is a login screen, a sync delay, or a prompt asking you to name your document before you can type a single word. freenotepad.app eliminates all of that. Open the browser, and you are writing. A new note is ready the moment you arrive. The interface gives you bold, italic, headings, and lists — enough structure to organize your thoughts without the overwhelming toolbar of a word processor. Many writers find that this minimal environment helps them stay in the flow of composition rather than fiddling with formatting.
+    </p>
+    <p>
+      <strong>Journaling with complete privacy.</strong> A journal is one of the most personal things a person can write, and the idea of storing journal entries on someone else's server is uncomfortable for many people. freenotepad.app keeps your writing exclusively in your browser's localStorage. No company can read it, no data breach can expose it, and no algorithm analyzes it. This makes it an ideal tool for morning pages, evening reflections, gratitude logs, or any form of personal writing where privacy is not a nice-to-have but a requirement. Write honestly, knowing that your words are yours alone.
+    </p>
+    <p>
+      <strong>Distraction-free writing sessions.</strong> The modern web is engineered to steal your attention. Notifications, feeds, and endless tabs compete for every moment of focus. freenotepad.app is intentionally simple: a clean page, a quiet sidebar for organizing notes, and nothing else. There are no social features, no commenting systems, no AI writing assistants injecting suggestions into your sentences, and no analytics tracking your word count for gamification. The app respects the writer's need for silence and space. Open it in a full-screen browser window, and you have a writing environment as focused as a blank notebook on a clean desk.
+    </p>
+    <p>
+      <strong>Markdown export for publishing workflows.</strong> When a draft is ready to move to the next stage — whether that means publishing on a blog, submitting to an editor, or importing into a book manuscript — freenotepad.app lets you export any note as a Markdown file. Markdown is the universal format of the modern writing ecosystem. It works with static site generators like Hugo and Jekyll, blogging platforms like Ghost and WordPress, and writing tools like Scrivener and Ulysses. You can also export all your notes as a JSON backup for archiving. This means freenotepad.app fits naturally into a larger writing workflow without locking you into a proprietary format.
+    </p>
+    <p>
+      <strong>Capturing ideas before they disappear.</strong> Writers know that ideas arrive at inconvenient times — in the middle of grocery shopping, during a conversation, or right before sleep. When you are near a computer, freenotepad.app is the fastest way to capture a thought. There is no app to install, no file to create, and no folder to navigate. Type the URL, and you are writing. Create a dedicated "Ideas" note that you keep pinned to the top of the sidebar, and every fleeting thought has a home. Later, during a dedicated writing session, you can review these fragments and decide which ones deserve to grow into something longer.
+    </p>
+
+    <div class="cta-box">
+      <h2>Start Writing — No Account Required</h2>
+      <p>A private, distraction-free notepad that opens in seconds. Your words stay on your device.</p>
+      <a href="/" class="cta-button">Open freenotepad.app</a>
+    </div>
+
+    <div class="related">
+      <h3>More from freenotepad.app</h3>
+      <ul>
+        <li><a href="/online-notepad-for-students.html">Notepad for Students</a></li>
+        <li><a href="/online-notepad-for-developers.html">Notepad for Developers</a></li>
+        <li><a href="/online-notepad-for-teachers.html">Notepad for Teachers</a></li>
+        <li><a href="/online-notepad.html">Free Online Notepad</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>
+    <p><a href="/">freenotepad.app</a> — A free, private notepad in your browser.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var html = document.documentElement;
+      var stored = localStorage.getItem('notebook_theme');
+      if (stored) {
+        html.setAttribute('data-theme', stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+      }
+      function updateLabel() {
+        var current = html.getAttribute('data-theme');
+        toggle.textContent = current === 'dark' ? 'Light mode' : 'Dark mode';
+      }
+      updateLabel();
+      toggle.addEventListener('click', function() {
+        var current = html.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('notebook_theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
+
+</body>
+</html>

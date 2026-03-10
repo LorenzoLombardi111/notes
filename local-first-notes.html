@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local-First Notes: Why Your Notepad Shouldn't Be in the Cloud</title>
+  <meta name="description" content="Local first notes keep your data private by storing everything on your device. Learn why local-first note-taking matters for privacy and data control.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="freenotepad.app">
+  <meta property="og:title" content="Local-First Notes: Why Your Notepad Shouldn't Be in the Cloud">
+  <meta property="og:description" content="Cloud-based notes expose your data to breaches, government requests, and AI training. Learn why local-first note-taking is the safer alternative.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="freenotepad.app">
+  <meta property="og:image" content="https://freenotepad.app/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Local-First Notes: Why Your Notepad Shouldn't Be in the Cloud">
+  <meta property="og:url" content="https://freenotepad.app/local-first-notes.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Local-First Notes: Why Your Notepad Shouldn't Be in the Cloud">
+  <meta name="twitter:description" content="Cloud-based notes expose your data to breaches, government requests, and AI training. Learn why local-first note-taking is the safer alternative.">
+  <meta name="twitter:image" content="https://freenotepad.app/og-image.svg">
+  <link rel="canonical" href="https://freenotepad.app/local-first-notes.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Local-First Notes: Why Your Notepad Shouldn't Be in the Cloud",
+    "description": "An editorial exploring the privacy, security, and practical reasons to choose local-first note-taking over cloud-based alternatives.",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-10",
+    "author": {
+      "@type": "Organization",
+      "name": "freenotepad.app",
+      "url": "https://freenotepad.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "freenotepad.app",
+      "url": "https://freenotepad.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://freenotepad.app/local-first-notes.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "freenotepad.app",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any",
+    "url": "https://freenotepad.app",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are local-first notes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local-first notes are notes stored directly on your device rather than on a remote server. The data never leaves your computer or phone unless you explicitly choose to export or share it. This approach gives you full ownership of your data, eliminates dependency on internet connectivity, and removes the privacy risks associated with cloud storage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are cloud-based notes private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cloud-based notes are generally not private in the strongest sense. Most cloud note services can access your unencrypted content, may be compelled to hand data over in response to government requests, and often reserve the right to use your data for product improvement or AI training. Even services with strong encryption policies remain vulnerable to data breaches. Only local-first or end-to-end encrypted tools keep your notes truly private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my notes if a cloud service shuts down?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When a cloud note service shuts down, you typically receive a limited window to export your data, often in a proprietary or inconvenient format. If you miss the deadline or the shutdown is abrupt, your notes may be lost permanently. Google alone has discontinued over 290 products. With local-first notes, your data is always on your device in formats you control, so no shutdown can affect you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should use local-first note-taking tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local-first note-taking is especially valuable for journalists protecting sources, healthcare workers handling patient information, lawyers managing privileged communications, activists in restrictive environments, and anyone working in regulated industries subject to GDPR, HIPAA, or similar data protection laws. It is also a strong choice for anyone who values personal privacy or needs reliable offline access."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #faf8f5;
+      --bg-sidebar: #f3f0eb;
+      --text: #2c2c2c;
+      --text-muted: #8a8580;
+      --text-heading: #1a1a1a;
+      --border: #e8e4df;
+      --accent: #b8860b;
+      --accent-light: #daa52033;
+      --accent-hover: #996f09;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --font-body: 'Lora', 'Georgia', serif;
+      --font-heading: 'Playfair Display', 'Georgia', serif;
+      --font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --transition: 0.2s ease;
+      --radius: 8px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --bg-sidebar: #212121;
+      --text: #e0ddd8;
+      --text-muted: #8a8580;
+      --text-heading: #f0ece6;
+      --border: #3a3a3a;
+      --accent: #d4a017;
+      --accent-light: #d4a01730;
+      --accent-hover: #e6b422;
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    html { height: 100%; }
+    body {
+      min-height: 100%;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    .brand {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      text-decoration: none;
+    }
+    .brand:hover { color: var(--accent); }
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Article */
+    article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .article-meta {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin: 40px 0 16px;
+      line-height: 1.3;
+    }
+    p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--accent-hover); }
+
+    /* CTA */
+    .cta-box {
+      text-align: center;
+      margin: 48px 0 40px;
+      padding: 40px 24px;
+      background: var(--bg-sidebar);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .cta-box h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .cta-box p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .cta-button:hover {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+
+    /* Related */
+    .related {
+      margin: 40px 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .related h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--text-heading);
+      margin-bottom: 16px;
+    }
+    .related ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related li a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--bg-sidebar);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: var(--transition);
+    }
+    .related li a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.25rem; }
+      p { font-size: 1rem; }
+      .cta-box { padding: 28px 16px; }
+      .related ul { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="brand">freenotepad.app</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+  </nav>
+
+  <article>
+    <nav style="font-family:var(--font-ui,'DM Sans',sans-serif);font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;"><a href="/" style="color:var(--accent);">Home</a> &rsaquo; Local-First Notes</nav>
+    <h1>Local-First Notes: Why Your Notepad Shouldn't Be in the Cloud</h1>
+    <p class="article-meta">Published March 10, 2026</p>
+
+    <p>
+      Every time you type a thought into a cloud-based note-taking app, that text travels across the internet to a server you do not own, managed by a company whose priorities may not align with yours. For most casual notes this feels harmless. But the architecture of cloud note-taking carries real risks that are worth understanding before you commit years of thoughts, plans, and sensitive information to someone else's infrastructure.
+    </p>
+
+    <h2>The privacy problem with cloud notes</h2>
+
+    <p>
+      Cloud note services store your data on remote servers, which means your notes are only as secure as that provider's infrastructure and policies. Data breaches at major technology companies have exposed billions of records over the past decade, and no company is immune regardless of its security budget.
+    </p>
+    <p>
+      Beyond breaches, there is the matter of lawful access. Government agencies routinely issue subpoenas and national security letters to cloud providers, compelling them to hand over user data, often without notifying the account holder. If your notes live on a company's servers, that company can be legally required to provide them to authorities.
+    </p>
+    <p>
+      There is also an emerging risk: AI training. Several major technology companies have updated their terms of service to permit using customer content to train machine learning models. Your private notes about health concerns, business strategies, or personal relationships could become training data. Most users never read the updated terms closely enough to notice.
+    </p>
+
+    <h2>Vendor lock-in and the shutdown problem</h2>
+
+    <p>
+      Cloud services change pricing, pivot their business models, and shut down with alarming regularity. Google alone has discontinued over 290 products, including Google Notebook, Google Wave, and Google Stadia. When a note-taking service shuts down, users typically receive a brief window to export their data, sometimes in a proprietary format that does not map cleanly to any other tool. If you miss that window, or if the shutdown is abrupt, years of accumulated notes can vanish.
+    </p>
+    <p>
+      Even without a shutdown, vendor lock-in creates friction. Migrating notes between services is rarely seamless. Formatting breaks, folder structures disappear, and metadata like creation dates or tags may not survive the transition. The more you invest in one platform, the more painful it becomes to leave.
+    </p>
+
+    <h2>GDPR and data residency</h2>
+
+    <p>
+      Under the General Data Protection Regulation, any organization processing personal data of EU residents must comply with strict rules around consent, data minimization, the right to erasure, and data residency. When you use a cloud note service, that provider becomes a data processor, and you must trust that they comply with applicable regulations. Many services store data across multiple jurisdictions, making it difficult to know where your notes reside or which legal framework governs them. For professionals in healthcare, legal, and finance, this ambiguity creates genuine compliance risk. Local-first note-taking eliminates this entirely: if your notes never leave your device, there is no processor, no cross-border transfer, and no residency question.
+    </p>
+
+    <h2>Who benefits most from local-first notes</h2>
+
+    <p>
+      <strong>Journalists</strong> need to protect sources and unpublished material from compelled disclosure. <strong>Healthcare workers</strong> handling patient information face strict HIPAA requirements in the United States and equivalent regulations elsewhere. <strong>Lawyers</strong> must maintain attorney-client privilege, which can be undermined if notes are accessible to a third-party provider. <strong>Activists and human rights workers</strong> operating in countries with surveillance infrastructure need tools that do not create a centralized record of their communications.
+    </p>
+    <p>
+      But local-first is not only for high-risk users. Anyone who values personal autonomy over their data, who wants their notes to work reliably without an internet connection, or who simply prefers not to depend on a corporation's continued goodwill has good reason to keep their notes local. Tools like <a href="/">freenotepad.app</a>, which stores all notes in the browser's local storage with no server component, Standard Notes with its end-to-end encryption, and plain text files managed with a local editor all represent different points on the local-first spectrum.
+    </p>
+
+    <h2>The trade-offs are real</h2>
+
+    <p>
+      Local-first note-taking is not without costs. You lose automatic cross-device sync, and you take on responsibility for your own backups. If your device fails and you have no export, those notes are gone. The right choice depends on your threat model and how much you value convenience versus control. But it should be a conscious choice, not a default you never questioned.
+    </p>
+
+    <div class="cta-box">
+      <h2>Try Local-First Note-Taking</h2>
+      <p>freenotepad.app is a free, private notepad that stores everything in your browser. No account, no cloud, no data collection.</p>
+      <a href="/" class="cta-button">Open freenotepad.app</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/privacy-notes-app.html">Private Notes App</a></li>
+        <li><a href="/offline-notepad.html">Offline Notepad</a></li>
+        <li><a href="/online-notepad.html">Free Online Notepad</a></li>
+        <li><a href="/vs-google-keep.html">freenotepad.app vs Google Keep</a></li>
+        <li><a href="/vs-notion.html">freenotepad.app vs Notion</a></li>
+        <li><a href="/vs-evernote.html">freenotepad.app vs Evernote</a></li>
+        <li><a href="/vs-simplenote.html">freenotepad.app vs Simplenote</a></li>
+        <li><a href="/vs-apple-notes.html">freenotepad.app vs Apple Notes</a></li>
+        <li><a href="/vs-obsidian.html">freenotepad.app vs Obsidian</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>
+    <p><a href="/">freenotepad.app</a> — A free, private notepad in your browser.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var html = document.documentElement;
+      var stored = localStorage.getItem('notebook_theme');
+      if (stored) {
+        html.setAttribute('data-theme', stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+      }
+      function updateLabel() {
+        var current = html.getAttribute('data-theme');
+        toggle.textContent = current === 'dark' ? 'Light mode' : 'Dark mode';
+      }
+      updateLabel();
+      toggle.addEventListener('click', function() {
+        var current = html.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('notebook_theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
+
+</body>
+</html>
